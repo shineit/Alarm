@@ -1,0 +1,389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		7D1D8E58129A26F50000BB4D /* AlarmWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D1D8E57129A26F50000BB4D /* AlarmWindow.xib */; };
+		7D27D51C1283437000FBDCB1 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D27D51B1283437000FBDCB1 /* Alarm.m */; };
+		7D27D53312834AB600FBDCB1 /* AlarmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D27D53212834AB600FBDCB1 /* AlarmController.m */; };
+		7D27D5D8128383FE00FBDCB1 /* Action.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D27D5D7128383FE00FBDCB1 /* Action.m */; };
+		7D27D61B1283ED8D00FBDCB1 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D27D61A1283ED8D00FBDCB1 /* QTKit.framework */; };
+		7D27D653128554CA00FBDCB1 /* SoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D27D652128554CA00FBDCB1 /* SoundController.m */; };
+		7D27D686128566AE00FBDCB1 /* Kill_Bill_Theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D27D681128566AE00FBDCB1 /* Kill_Bill_Theme.mp3 */; };
+		7D27D687128566AE00FBDCB1 /* La_Cucaracha.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D27D682128566AE00FBDCB1 /* La_Cucaracha.mp3 */; };
+		7D27D688128566AE00FBDCB1 /* Mario.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D27D683128566AE00FBDCB1 /* Mario.mp3 */; };
+		7D27D689128566AE00FBDCB1 /* Morning_Birds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D27D684128566AE00FBDCB1 /* Morning_Birds.mp3 */; };
+		7D27D68A128566AE00FBDCB1 /* Music_Box.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D27D685128566AE00FBDCB1 /* Music_Box.mp3 */; };
+		7D27D6B21285D8B900FBDCB1 /* AlarmWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D27D6B11285D8B900FBDCB1 /* AlarmWindowController.m */; };
+		7D27D74F12871A3B00FBDCB1 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D27D74E12871A3B00FBDCB1 /* edit.png */; };
+		7D67E79A1289EC79002048BF /* AlarmCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D67E7991289EC79002048BF /* AlarmCell.m */; };
+		7D67E7FA1289FCAB002048BF /* AlarmActivationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D67E7F91289FCAB002048BF /* AlarmActivationCell.m */; };
+		7D67E8B2128A29D5002048BF /* AlarmStopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D67E8B1128A29D5002048BF /* AlarmStopCell.m */; };
+		7D74D81E1289CE5E0021111F /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D74D81D1289CE5E0021111F /* delete.png */; };
+		7D74D8221289D0170021111F /* ringtone.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D74D8201289D0170021111F /* ringtone.png */; };
+		7DED090712965ABB00686093 /* PrefsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DED090612965ABB00686093 /* PrefsManager.m */; };
+		7DED094B1297E48600686093 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DED094A1297E48600686093 /* IOKit.framework */; };
+		7DED096E1297EDF900686093 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DED096D1297EDF900686093 /* Security.framework */; };
+		7DED09E912996C7300686093 /* AlarmBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DED09E812996C7300686093 /* AlarmBackground.png */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* Alarm_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm_Prefix.pch; sourceTree = "<group>"; };
+		7D1D8E57129A26F50000BB4D /* AlarmWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmWindow.xib; sourceTree = "<group>"; };
+		7D27D51A1283437000FBDCB1 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
+		7D27D51B1283437000FBDCB1 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
+		7D27D53112834AB600FBDCB1 /* AlarmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmController.h; sourceTree = "<group>"; };
+		7D27D53212834AB600FBDCB1 /* AlarmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmController.m; sourceTree = "<group>"; };
+		7D27D5D6128383FE00FBDCB1 /* Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Action.h; sourceTree = "<group>"; };
+		7D27D5D7128383FE00FBDCB1 /* Action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Action.m; sourceTree = "<group>"; };
+		7D27D61A1283ED8D00FBDCB1 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
+		7D27D651128554CA00FBDCB1 /* SoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundController.h; sourceTree = "<group>"; };
+		7D27D652128554CA00FBDCB1 /* SoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundController.m; sourceTree = "<group>"; };
+		7D27D681128566AE00FBDCB1 /* Kill_Bill_Theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Kill_Bill_Theme.mp3; path = Resources/Kill_Bill_Theme.mp3; sourceTree = "<group>"; };
+		7D27D682128566AE00FBDCB1 /* La_Cucaracha.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = La_Cucaracha.mp3; path = Resources/La_Cucaracha.mp3; sourceTree = "<group>"; };
+		7D27D683128566AE00FBDCB1 /* Mario.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Mario.mp3; path = Resources/Mario.mp3; sourceTree = "<group>"; };
+		7D27D684128566AE00FBDCB1 /* Morning_Birds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Morning_Birds.mp3; path = Resources/Morning_Birds.mp3; sourceTree = "<group>"; };
+		7D27D685128566AE00FBDCB1 /* Music_Box.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Music_Box.mp3; path = Resources/Music_Box.mp3; sourceTree = "<group>"; };
+		7D27D6B01285D8B900FBDCB1 /* AlarmWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmWindowController.h; sourceTree = "<group>"; };
+		7D27D6B11285D8B900FBDCB1 /* AlarmWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmWindowController.m; sourceTree = "<group>"; };
+		7D27D74E12871A3B00FBDCB1 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = edit.png; path = Resources/edit.png; sourceTree = "<group>"; };
+		7D67E7981289EC79002048BF /* AlarmCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmCell.h; sourceTree = "<group>"; };
+		7D67E7991289EC79002048BF /* AlarmCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmCell.m; sourceTree = "<group>"; };
+		7D67E7F81289FCAB002048BF /* AlarmActivationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmActivationCell.h; sourceTree = "<group>"; };
+		7D67E7F91289FCAB002048BF /* AlarmActivationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmActivationCell.m; sourceTree = "<group>"; };
+		7D67E8B0128A29D5002048BF /* AlarmStopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmStopCell.h; sourceTree = "<group>"; };
+		7D67E8B1128A29D5002048BF /* AlarmStopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmStopCell.m; sourceTree = "<group>"; };
+		7D74D81D1289CE5E0021111F /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = delete.png; path = Resources/delete.png; sourceTree = "<group>"; };
+		7D74D8201289D0170021111F /* ringtone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ringtone.png; path = Resources/ringtone.png; sourceTree = "<group>"; };
+		7DED090512965ABB00686093 /* PrefsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefsManager.h; sourceTree = "<group>"; };
+		7DED090612965ABB00686093 /* PrefsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefsManager.m; sourceTree = "<group>"; };
+		7DED094A1297E48600686093 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		7DED096D1297EDF900686093 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		7DED09E812996C7300686093 /* AlarmBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AlarmBackground.png; path = Resources/AlarmBackground.png; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				7D27D61B1283ED8D00FBDCB1 /* QTKit.framework in Frameworks */,
+				7DED094B1297E48600686093 /* IOKit.framework in Frameworks */,
+				7DED096E1297EDF900686093 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7D27D51A1283437000FBDCB1 /* Alarm.h */,
+				7D27D51B1283437000FBDCB1 /* Alarm.m */,
+				7D27D53112834AB600FBDCB1 /* AlarmController.h */,
+				7D27D53212834AB600FBDCB1 /* AlarmController.m */,
+				7D27D5D6128383FE00FBDCB1 /* Action.h */,
+				7D27D5D7128383FE00FBDCB1 /* Action.m */,
+				7D27D651128554CA00FBDCB1 /* SoundController.h */,
+				7D27D652128554CA00FBDCB1 /* SoundController.m */,
+				7D27D6B01285D8B900FBDCB1 /* AlarmWindowController.h */,
+				7D27D6B11285D8B900FBDCB1 /* AlarmWindowController.m */,
+				7D67E7981289EC79002048BF /* AlarmCell.h */,
+				7D67E7991289EC79002048BF /* AlarmCell.m */,
+				7D67E7F81289FCAB002048BF /* AlarmActivationCell.h */,
+				7D67E7F91289FCAB002048BF /* AlarmActivationCell.m */,
+				7D67E8B0128A29D5002048BF /* AlarmStopCell.h */,
+				7D67E8B1128A29D5002048BF /* AlarmStopCell.m */,
+				7DED090512965ABB00686093 /* PrefsManager.h */,
+				7DED090612965ABB00686093 /* PrefsManager.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* Alarm.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				7D27D61A1283ED8D00FBDCB1 /* QTKit.framework */,
+				7DED094A1297E48600686093 /* IOKit.framework */,
+				7DED096D1297EDF900686093 /* Security.framework */,
+			);
+			name = Alarm;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* Alarm_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7DED09E812996C7300686093 /* AlarmBackground.png */,
+				7D74D8201289D0170021111F /* ringtone.png */,
+				7D74D81D1289CE5E0021111F /* delete.png */,
+				7D27D74E12871A3B00FBDCB1 /* edit.png */,
+				7D27D681128566AE00FBDCB1 /* Kill_Bill_Theme.mp3 */,
+				7D27D682128566AE00FBDCB1 /* La_Cucaracha.mp3 */,
+				7D27D683128566AE00FBDCB1 /* Mario.mp3 */,
+				7D27D684128566AE00FBDCB1 /* Morning_Birds.mp3 */,
+				7D27D685128566AE00FBDCB1 /* Music_Box.mp3 */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				7D1D8E57129A26F50000BB4D /* AlarmWindow.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* Alarm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Alarm" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Alarm;
+			productInstallPath = "$(HOME)/Applications";
+			productName = Alarm;
+			productReference = 8D1107320486CEB800E47090 /* Alarm.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Alarm" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Alarm */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* Alarm */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				7D27D686128566AE00FBDCB1 /* Kill_Bill_Theme.mp3 in Resources */,
+				7D27D687128566AE00FBDCB1 /* La_Cucaracha.mp3 in Resources */,
+				7D27D688128566AE00FBDCB1 /* Mario.mp3 in Resources */,
+				7D27D689128566AE00FBDCB1 /* Morning_Birds.mp3 in Resources */,
+				7D27D68A128566AE00FBDCB1 /* Music_Box.mp3 in Resources */,
+				7D27D74F12871A3B00FBDCB1 /* edit.png in Resources */,
+				7D74D81E1289CE5E0021111F /* delete.png in Resources */,
+				7D74D8221289D0170021111F /* ringtone.png in Resources */,
+				7DED09E912996C7300686093 /* AlarmBackground.png in Resources */,
+				7D1D8E58129A26F50000BB4D /* AlarmWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				7D27D51C1283437000FBDCB1 /* Alarm.m in Sources */,
+				7D27D53312834AB600FBDCB1 /* AlarmController.m in Sources */,
+				7D27D5D8128383FE00FBDCB1 /* Action.m in Sources */,
+				7D27D653128554CA00FBDCB1 /* SoundController.m in Sources */,
+				7D27D6B21285D8B900FBDCB1 /* AlarmWindowController.m in Sources */,
+				7D67E79A1289EC79002048BF /* AlarmCell.m in Sources */,
+				7D67E7FA1289FCAB002048BF /* AlarmActivationCell.m in Sources */,
+				7D67E8B2128A29D5002048BF /* AlarmStopCell.m in Sources */,
+				7DED090712965ABB00686093 /* PrefsManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1DDD58140DA1D0A300B32029 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DDD58150DA1D0A300B32029 /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Alarm_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Alarm;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Alarm_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Alarm;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Alarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Alarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
