@@ -29,6 +29,7 @@
 	IBOutlet NSSegmentedControl *sgmtControl;
 	IBOutlet NSMatrix *matrixRingtone;
 	IBOutlet NSTextField *lblPath;
+	IBOutlet NSButton *btnChooseFile;
 }
 
 @property (retain, nonatomic) Alarm *alarm;

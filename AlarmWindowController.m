@@ -69,6 +69,25 @@
 			}
 		}
 		
+		//ringtone
+		NSString *ringtone = [_alarm ringtone];
+		if ([ringtone hasPrefix:@"ring://"]) {
+			//RINGTONE
+			[matrixRingtone selectCellWithTag:0];
+			[cboxRingtone selectItemWithTitle:ringtone];
+		}
+		else {
+			[matrixRingtone selectCellWithTag:1];
+			if ([ringtone hasPrefix:@"music://"]) {
+				[lblPath setStringValue:[ringtone substringFromIndex:8]];
+			}
+			else {
+				[lblPath setStringValue:ringtone];
+			}
+
+		}
+		[self matrixRingtoneChanged:self];
+		
 	}
 }
 
@@ -85,7 +104,17 @@
 	int hours = [components hour];
 	int mins = [components minute];
 	//ringtone
-	NSString *ringtone = [[cboxRingtone selectedItem] title];
+	NSString *ringtone;
+	NSButtonCell *cell = [matrixRingtone selectedCell];
+	if (cell.tag == 0) {
+		//RINGTONE
+		ringtone = [[cboxRingtone selectedItem] title];
+	}
+	else if (cell.tag == 1) {
+		//CUSTOM Media File
+		ringtone = [lblPath stringValue];
+		ringtone = [@"music://" stringByAppendingFormat:@"%@",ringtone];
+	}
 	//repeat and weekday
 	BOOL repeat = [chboxRepeat state];
 	NSMutableSet *weekday = [NSMutableSet set];
@@ -158,7 +187,17 @@
 }
 
 -(IBAction)chooseMediaFile:(id)sender {
+	NSOpenPanel *panel = [NSOpenPanel openPanel];
+	[panel setAllowsMultipleSelection:NO];
+	[panel setCanChooseDirectories:NO];
+	[panel setAllowedFileTypes:[NSArray arrayWithObjects:@"mp3",@"wav",@"aiff",nil]];
+	int res = [panel runModal];
 	
+	if(res == NSOKButton){
+		NSURL *url = [panel URL];
+		NSString *path = [url path];
+		[lblPath setStringValue:path];
+	}
 }
 
 -(IBAction)chboxRepeatChanged:(id)sender {
@@ -170,13 +209,13 @@
 	NSButtonCell *cell = [matrixRingtone selectedCell];
 	if (cell.tag == 0) {
 		//RINGTONE
-		//cboxRingtone.enabled = YES;
-		//btnChooseFile.enabled = NO;
+		[cboxRingtone setEnabled:YES];
+		[btnChooseFile setEnabled:NO];
 	}
 	else if (cell.tag == 1) {
 		//CUSTOM Media File
-		//cboxRingtone.enabled = YES;
-		//btnChooseFile.enabled = NO;
+		[cboxRingtone setEnabled:NO];
+		[btnChooseFile setEnabled:YES];
 	}
 }
 

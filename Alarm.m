@@ -13,7 +13,7 @@
 
 @implementation Alarm
 
-@synthesize name, uid, hours, mins, secs, weekday, dayOfMonth, month, year;
+@synthesize name, uid, hours, mins, secs, weekday, dayOfMonth, month, year, actions;
 @synthesize active, snooze, repeat, triggered;
 
 -(id)initWithName:(NSString *)_name Hours:(int)_hours Mins:(int)_mins Secs:(int)_secs {
@@ -97,6 +97,16 @@
 	return self;
 }
 
+// When an instance is assigned as objectValue to a NSCell, the NSCell creates a copy.
+// Therefore we have to implement the NSCopying protocol
+- (id)copyWithZone:(NSZone *)zone {
+    Alarm *copy = [[[self class] allocWithZone: zone] initWithName:name Hours:hours Mins:mins Secs:secs WeekdaySet:weekday DayOfMonthSet:dayOfMonth
+														  MonthSet:month YearSet:year];
+	copy.active = active, copy.snooze = snooze, copy.repeat = repeat;
+	copy.actions = actions;
+    return copy;
+}
+
 -(void)allowTriggering:(NSTimer *)timer {
 	@synchronized(self) {
 		allowToTrigger = YES;
@@ -149,8 +159,16 @@
 						if ([year member:_year] || [year member:anyNumber]) {
 							//if repeat activated, check weekday too
 							NSNumber *_weekday = [NSNumber numberWithInt:[components weekday]];
-							if (repeat && (![weekday member:_weekday] && ![weekday member:anyNumber])) {
-								return NO;
+							if (repeat ) {
+								if(![weekday member:_weekday] && ![weekday member:anyNumber]) {
+									return NO;
+								}
+							}
+							
+							if(!repeat) {
+								//repeat not activated and alarms triggering
+								//disable alarm so that it does not repeat
+								active = NO;
 							}
 							
 							//allowToTrigger helps avoid triggering after being stopped
@@ -216,16 +234,21 @@
 	}
 }
 
+-(NSString *)ringtone {
+	Action *action = [actions objectAtIndex:0];
+	return action.actionParams;
+}
+
 -(NSString *)prettyPrint {
 	NSString *recurrence = nil;
 	if (repeat) {
-		BOOL mon = [weekday member:[NSNumber numberWithInt:2]];
-		BOOL tue = [weekday member:[NSNumber numberWithInt:3]];
-		BOOL wed = [weekday member:[NSNumber numberWithInt:4]];
-		BOOL thu = [weekday member:[NSNumber numberWithInt:5]];
-		BOOL fri = [weekday member:[NSNumber numberWithInt:6]];
-		BOOL sat = [weekday member:[NSNumber numberWithInt:7]];
-		BOOL sun = [weekday member:[NSNumber numberWithInt:1]];
+		BOOL mon = [weekday member:[NSNumber numberWithInt:2]] != nil;
+		BOOL tue = [weekday member:[NSNumber numberWithInt:3]] != nil;
+		BOOL wed = [weekday member:[NSNumber numberWithInt:4]] != nil;
+		BOOL thu = [weekday member:[NSNumber numberWithInt:5]] != nil;
+		BOOL fri = [weekday member:[NSNumber numberWithInt:6]] != nil;
+		BOOL sat = [weekday member:[NSNumber numberWithInt:7]] != nil;
+		BOOL sun = [weekday member:[NSNumber numberWithInt:1]] != nil;
 		
 		if (mon && tue & wed && thu && fri && sat && sun) {
 			recurrence = @"everyday";
@@ -277,14 +300,6 @@
 	
 	NSString *tmp = [NSString stringWithFormat:@"%@ %02d:%02d", recurrence, hours,mins];
 	return tmp;
-}
-
-// When an instance is assigned as objectValue to a NSCell, the NSCell creates a copy.
-// Therefore we have to implement the NSCopying protocol
-- (id)copyWithZone:(NSZone *)zone {
-    Alarm *copy = [[[self class] allocWithZone: zone] initWithName:name Hours:hours Mins:mins Secs:secs WeekdaySet:weekday DayOfMonthSet:dayOfMonth
-														  MonthSet:month YearSet:year];
-    return copy;
 }
 
 -(void)dealloc {

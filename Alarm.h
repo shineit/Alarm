@@ -39,6 +39,7 @@
 @property (nonatomic, copy) NSSet * dayOfMonth;
 @property (nonatomic, copy) NSSet * month;
 @property (nonatomic, copy) NSSet * year;
+@property (nonatomic, copy) NSMutableArray * actions;
 
 -(NSString *)prettyPrint;
 
@@ -49,5 +50,6 @@
 -(void)addAction:(id)action;
 -(void)performActions;
 -(void)stop;
+-(NSString* )ringtone;
 
 @end

@@ -48,7 +48,7 @@ static SoundController *sharedInstance = nil;
 	}
 	else {
 		//unsupported play protocol
-		NSLog([NSString stringWithFormat:@"Unsupported playing protocol %@", customUrl]);
+		NSLog(@"Unsupported playing protocol %@", customUrl);
 		return nil;
 	}
 	
