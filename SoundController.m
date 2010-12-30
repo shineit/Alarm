@@ -102,11 +102,11 @@ static SoundController *sharedInstance = nil;
 	//set repeat
 	//first cast the duration in int
 	int duration = [sound duration];
+	duration = duration ? duration : 1;
 	repeatCount = nbSecs/duration;
 	if (repeatCount > 0) {
 		repeatCount = repeatCount - 1;
 	}
-	NSLog([NSString stringWithFormat:@"playing for %d => %d repeats", nbSecs, repeatCount]);
 	//set delegate to be notified when playback ends
 	[sound setDelegate:self];
 	//play

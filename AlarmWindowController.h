@@ -37,6 +37,7 @@
 -(IBAction)chooseMediaFile:(id)sender;
 -(IBAction)chboxRepeatChanged:(id)sender;
 -(IBAction)matrixRingtoneChanged:(id)sender;
+-(IBAction)didClickPath:(id)sender;
 
 -(id)initWithAlarm:(id)alarm Action:(int)action Controller:(AlarmController *)controller;
 -(void)loadValuesFromAlarm:(Alarm *)alarm;

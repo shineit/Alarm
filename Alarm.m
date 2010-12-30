@@ -310,19 +310,19 @@
 			}
 		}
 		else {
-			recurrence = NSLocalizedString(@"At ",@"Alarm description");
+			recurrence = NSLocalizedString(@"",@"Alarm description");
 		}
 	}
 	
 	if (!recurrence) {
-		recurrence = NSLocalizedString(@"At ",@"Alarm description");
+		recurrence = NSLocalizedString(@"at ",@"Alarm description");
 	}
 	else {
 		recurrence = [recurrence stringByAppendingFormat:NSLocalizedString(@" at",@"Alarm description")];
 	}
 
 	
-	NSString *tmp = [NSString stringWithFormat:@"%@ %02d:%02d", recurrence, hours,mins];
+	NSString *tmp = [NSString stringWithFormat:@"%@ %@ %02d:%02d",NSLocalizedString(@"Rings",@"Alarm description"), recurrence, hours,mins];
 	return tmp;
 }
 

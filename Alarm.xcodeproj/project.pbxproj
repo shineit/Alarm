@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		7D029C6D12CD309500882BDA /* Cuckoo.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7D029C6312CD309500882BDA /* Cuckoo.m4a */; };
+		7D029C7012CD309500882BDA /* La Cucaracha.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D029C6612CD309500882BDA /* La Cucaracha.mp3 */; };
+		7D029C7112CD309500882BDA /* Mario.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D029C6712CD309500882BDA /* Mario.mp3 */; };
+		7D029C7212CD309500882BDA /* Morning Birds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D029C6812CD309500882BDA /* Morning Birds.mp3 */; };
+		7D029C7312CD309500882BDA /* Music Box.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D029C6912CD309500882BDA /* Music Box.mp3 */; };
+		7D029C7412CD309500882BDA /* Rain.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7D029C6A12CD309500882BDA /* Rain.m4a */; };
+		7D029C7512CD309500882BDA /* Telephone.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7D029C6B12CD309500882BDA /* Telephone.m4a */; };
+		7D029C7612CD309500882BDA /* Wind Chimes.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7D029C6C12CD309500882BDA /* Wind Chimes.m4a */; };
+		7D029CAE12CD394300882BDA /* Beep.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7D029CAD12CD394300882BDA /* Beep.m4a */; };
 		7D1D8EC0129B995A0000BB4D /* AlarmOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D1D8EBE129B995A0000BB4D /* AlarmOverlay.xib */; };
 		7D1D8EC4129B9D560000BB4D /* AlarmOverlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1D8EC3129B9D560000BB4D /* AlarmOverlayController.m */; };
 		7D27D51C1283437000FBDCB1 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D27D51B1283437000FBDCB1 /* Alarm.m */; };
@@ -15,11 +24,6 @@
 		7D27D5D8128383FE00FBDCB1 /* Action.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D27D5D7128383FE00FBDCB1 /* Action.m */; };
 		7D27D61B1283ED8D00FBDCB1 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D27D61A1283ED8D00FBDCB1 /* QTKit.framework */; };
 		7D27D653128554CA00FBDCB1 /* SoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D27D652128554CA00FBDCB1 /* SoundController.m */; };
-		7D27D686128566AE00FBDCB1 /* Kill_Bill_Theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D27D681128566AE00FBDCB1 /* Kill_Bill_Theme.mp3 */; };
-		7D27D687128566AE00FBDCB1 /* La_Cucaracha.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D27D682128566AE00FBDCB1 /* La_Cucaracha.mp3 */; };
-		7D27D688128566AE00FBDCB1 /* Mario.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D27D683128566AE00FBDCB1 /* Mario.mp3 */; };
-		7D27D689128566AE00FBDCB1 /* Morning_Birds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D27D684128566AE00FBDCB1 /* Morning_Birds.mp3 */; };
-		7D27D68A128566AE00FBDCB1 /* Music_Box.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D27D685128566AE00FBDCB1 /* Music_Box.mp3 */; };
 		7D27D6B21285D8B900FBDCB1 /* AlarmWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D27D6B11285D8B900FBDCB1 /* AlarmWindowController.m */; };
 		7D27D74F12871A3B00FBDCB1 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D27D74E12871A3B00FBDCB1 /* edit.png */; };
 		7D67E79A1289EC79002048BF /* AlarmCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D67E7991289EC79002048BF /* AlarmCell.m */; };
@@ -50,6 +54,15 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Alarm_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm_Prefix.pch; sourceTree = "<group>"; };
+		7D029C6312CD309500882BDA /* Cuckoo.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Cuckoo.m4a; path = Resources/Cuckoo.m4a; sourceTree = "<group>"; };
+		7D029C6612CD309500882BDA /* La Cucaracha.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "La Cucaracha.mp3"; path = "Resources/La Cucaracha.mp3"; sourceTree = "<group>"; };
+		7D029C6712CD309500882BDA /* Mario.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Mario.mp3; path = Resources/Mario.mp3; sourceTree = "<group>"; };
+		7D029C6812CD309500882BDA /* Morning Birds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Morning Birds.mp3"; path = "Resources/Morning Birds.mp3"; sourceTree = "<group>"; };
+		7D029C6912CD309500882BDA /* Music Box.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Music Box.mp3"; path = "Resources/Music Box.mp3"; sourceTree = "<group>"; };
+		7D029C6A12CD309500882BDA /* Rain.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Rain.m4a; path = Resources/Rain.m4a; sourceTree = "<group>"; };
+		7D029C6B12CD309500882BDA /* Telephone.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Telephone.m4a; path = Resources/Telephone.m4a; sourceTree = "<group>"; };
+		7D029C6C12CD309500882BDA /* Wind Chimes.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Wind Chimes.m4a"; path = "Resources/Wind Chimes.m4a"; sourceTree = "<group>"; };
+		7D029CAD12CD394300882BDA /* Beep.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Beep.m4a; path = Resources/Beep.m4a; sourceTree = "<group>"; };
 		7D1D8E57129A26F50000BB4D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/AlarmWindow.xib; sourceTree = "<group>"; };
 		7D1D8EBF129B995A0000BB4D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/AlarmOverlay.xib; sourceTree = "<group>"; };
 		7D1D8EC2129B9D560000BB4D /* AlarmOverlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmOverlayController.h; sourceTree = "<group>"; };
@@ -63,11 +76,6 @@
 		7D27D61A1283ED8D00FBDCB1 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
 		7D27D651128554CA00FBDCB1 /* SoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundController.h; sourceTree = "<group>"; };
 		7D27D652128554CA00FBDCB1 /* SoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundController.m; sourceTree = "<group>"; };
-		7D27D681128566AE00FBDCB1 /* Kill_Bill_Theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Kill_Bill_Theme.mp3; path = Resources/Kill_Bill_Theme.mp3; sourceTree = "<group>"; };
-		7D27D682128566AE00FBDCB1 /* La_Cucaracha.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = La_Cucaracha.mp3; path = Resources/La_Cucaracha.mp3; sourceTree = "<group>"; };
-		7D27D683128566AE00FBDCB1 /* Mario.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Mario.mp3; path = Resources/Mario.mp3; sourceTree = "<group>"; };
-		7D27D684128566AE00FBDCB1 /* Morning_Birds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Morning_Birds.mp3; path = Resources/Morning_Birds.mp3; sourceTree = "<group>"; };
-		7D27D685128566AE00FBDCB1 /* Music_Box.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Music_Box.mp3; path = Resources/Music_Box.mp3; sourceTree = "<group>"; };
 		7D27D6B01285D8B900FBDCB1 /* AlarmWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmWindowController.h; sourceTree = "<group>"; };
 		7D27D6B11285D8B900FBDCB1 /* AlarmWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmWindowController.m; sourceTree = "<group>"; };
 		7D27D74E12871A3B00FBDCB1 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = edit.png; path = Resources/edit.png; sourceTree = "<group>"; };
@@ -190,6 +198,15 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7D029CAD12CD394300882BDA /* Beep.m4a */,
+				7D029C6312CD309500882BDA /* Cuckoo.m4a */,
+				7D029C6612CD309500882BDA /* La Cucaracha.mp3 */,
+				7D029C6712CD309500882BDA /* Mario.mp3 */,
+				7D029C6812CD309500882BDA /* Morning Birds.mp3 */,
+				7D029C6912CD309500882BDA /* Music Box.mp3 */,
+				7D029C6A12CD309500882BDA /* Rain.m4a */,
+				7D029C6B12CD309500882BDA /* Telephone.m4a */,
+				7D029C6C12CD309500882BDA /* Wind Chimes.m4a */,
 				7DD719D012A2A393001393EB /* clock.icns */,
 				7DD7193C12A0E5D8001393EB /* ringtone_16.png */,
 				7DD7191A129E3B23001393EB /* Prefs.xib */,
@@ -197,11 +214,6 @@
 				7D74D8201289D0170021111F /* ringtone.png */,
 				7D74D81D1289CE5E0021111F /* delete.png */,
 				7D27D74E12871A3B00FBDCB1 /* edit.png */,
-				7D27D681128566AE00FBDCB1 /* Kill_Bill_Theme.mp3 */,
-				7D27D682128566AE00FBDCB1 /* La_Cucaracha.mp3 */,
-				7D27D683128566AE00FBDCB1 /* Mario.mp3 */,
-				7D27D684128566AE00FBDCB1 /* Morning_Birds.mp3 */,
-				7D27D685128566AE00FBDCB1 /* Music_Box.mp3 */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
@@ -272,11 +284,6 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
-				7D27D686128566AE00FBDCB1 /* Kill_Bill_Theme.mp3 in Resources */,
-				7D27D687128566AE00FBDCB1 /* La_Cucaracha.mp3 in Resources */,
-				7D27D688128566AE00FBDCB1 /* Mario.mp3 in Resources */,
-				7D27D689128566AE00FBDCB1 /* Morning_Birds.mp3 in Resources */,
-				7D27D68A128566AE00FBDCB1 /* Music_Box.mp3 in Resources */,
 				7D27D74F12871A3B00FBDCB1 /* edit.png in Resources */,
 				7D74D81E1289CE5E0021111F /* delete.png in Resources */,
 				7D74D8221289D0170021111F /* ringtone.png in Resources */,
@@ -286,6 +293,15 @@
 				7DD7191B129E3B23001393EB /* Prefs.xib in Resources */,
 				7DD7193D12A0E5D8001393EB /* ringtone_16.png in Resources */,
 				7DD719D112A2A393001393EB /* clock.icns in Resources */,
+				7D029C6D12CD309500882BDA /* Cuckoo.m4a in Resources */,
+				7D029C7012CD309500882BDA /* La Cucaracha.mp3 in Resources */,
+				7D029C7112CD309500882BDA /* Mario.mp3 in Resources */,
+				7D029C7212CD309500882BDA /* Morning Birds.mp3 in Resources */,
+				7D029C7312CD309500882BDA /* Music Box.mp3 in Resources */,
+				7D029C7412CD309500882BDA /* Rain.m4a in Resources */,
+				7D029C7512CD309500882BDA /* Telephone.m4a in Resources */,
+				7D029C7612CD309500882BDA /* Wind Chimes.m4a in Resources */,
+				7D029CAE12CD394300882BDA /* Beep.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

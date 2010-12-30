@@ -81,23 +81,59 @@
 //action methods
 -(void)playMusicWithSnooze:(BOOL)snoozeEnabled {
 	//read snooze prefs from pref file
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	
 	int snoozeInterva = [[PrefsManager sharedInstance] readSnoozeInterval];
 	
 	if (snoozeEnabled) {
-		NSLog([NSString stringWithFormat:@"playing for %d", (snoozeInterva/2)]);
+		NSLog(@"playing for %d", (snoozeInterva/2));
 		[[SoundController sharedInstance] playMusicFrom:self.actionParams During:(snoozeInterva/2)];
 	}
 	else {
-		NSLog([NSString stringWithFormat:@"playing for %d", (snoozeInterva)]);
+		NSLog(@"playing for %d", (snoozeInterva));
 		[[SoundController sharedInstance] playMusicFrom:self.actionParams During:snoozeInterva];
 	}
 }
 
 +(NSArray *)ringtones {
-	[NSArray arrayWithObjects:RING_MARIO,RING_MUSIC_BOX,RING_LA_CUCARACHA,RING_MORNING_BIRDS,RING_KILL_BILL_THEME,nil];
+	return [NSArray arrayWithObjects:RING_BEEP, RING_CUCKOO, RING_LA_CUCARACHA, RING_MORNING_BIRDS, RING_MUSIC_BOX, RING_RAIN, RING_TELEPHONE, nil];
 }
+
++(NSArray *)ringtonesNames {
+	NSArray *tmp = [Action ringtones];
+	NSMutableArray *names = [NSMutableArray array];
+	for (int i=0; i<tmp.count; i++) {
+		NSString *ring = [tmp objectAtIndex:i];
+		[names addObject:[Action nameFromRingtone:ring]]; 
+	}
+	
+	return names;
+}
+
++(NSString *)nameFromRingtone:(NSString *)ringtone {
+	NSString *ret = [ringtone substringFromIndex:7];
+	ret = [ret stringByReplacingOccurrencesOfString:@"_" withString:@" "];
+	
+	return ret;
+}
+
++(id)ringtoneAtIndex:(int)index {
+	NSArray *tmp = [Action ringtones];
+	return [tmp objectAtIndex:index];
+}
+
++(int)ringtoneIndex:(NSString *)ringtone {
+	NSArray *tmp = [Action ringtones];
+	
+	for (int i=0; i<tmp.count; i++) {
+		NSString *ring = [tmp objectAtIndex:i];
+		if ([ring compare:ringtone ] == NSOrderedSame) {
+			return i;
+		}
+	}
+	
+	return 0;
+}
+
 
 
 @end

@@ -35,9 +35,10 @@
 }
 
 -(void)addFixturesAlarm {
-	Alarm *alarm = [[[Alarm alloc] initWithName:@"Alarm 1" Hours:11 Mins:54 Secs:ANY Weekday:ANY DayOfMonth:ANY Month:ANY Year:ANY] autorelease];
+	Alarm *alarm = [[[Alarm alloc] initWithName:NSLocalizedString(@"My Alarm",@"Fixture alarm") Hours:8 Mins:00 Secs:ANY Weekday:ANY DayOfMonth:ANY Month:ANY Year:ANY] autorelease];
 	Action *action = [[[Action alloc] initWithName:nil Method:PLAY_MUSIC Params:RING_MUSIC_BOX] autorelease];
 	[alarm addAction:action];
+	alarm.active = NO;
 	[self addAlarm:alarm];
 }
 
@@ -324,6 +325,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[NSApp setDelegate: self]; 
 	[self loadDataFromDisk]; 
 	
+	//if no alarm, add a dummy alarm
+	if ([alarms count] == 0) {
+		[self addFixturesAlarm];
+	}
+	
 	[alarmsTable setTarget:self];
 	[alarmsTable setAction:@selector(didClickColumn:)];
 	
@@ -399,12 +405,16 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (void) receiveSleepNote: (NSNotification*) note {
     NSLog(@"receiveSleepNote: %@", [note name]);
 	NSCalendarDate  *timeIntervalSinceNow = [NSCalendarDate dateWithTimeIntervalSinceNow:40];
+	IOReturn result = IOPMSchedulePowerEvent ((CFDateRef)timeIntervalSinceNow, NULL, CFSTR(kIOPMAutoWake));
+	NSLog(@"result: %d", result);
+	/*
 	if ([self authorizeUser]) {
 		IOReturn result = IOPMSchedulePowerEvent ((CFDateRef)timeIntervalSinceNow, NULL, CFSTR(kIOPMAutoWake));
 		NSLog(@"result: %d", result);
 		
 		[self unauthorizeUser];
 	}
+	 */
 }
 
 - (void) receiveWakeNote: (NSNotification*) note {
@@ -431,6 +441,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSLog(@"window should show");
 	//show window if hidden
 	[window makeKeyAndOrderFront:self];
+	//TODO do same for click on dock
 }
 
 -(void)dealloc {

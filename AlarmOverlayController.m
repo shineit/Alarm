@@ -37,6 +37,7 @@
 
 -(IBAction)snooze:(id)sender {
 	NSLog(@"snooze");
+	[btnSnooze setEnabled:YES];
 	if (alarm) {
 		[alarm snoozeAlarm];
 	}
@@ -46,6 +47,7 @@
 
 -(IBAction)stop:(id)sender {
 	NSLog(@"stop");
+	[btnSnooze setEnabled:YES];
 	if (alarm) {
 		[alarm stop];
 	}
@@ -72,7 +74,7 @@
 	if (alarm) {
 		[lblName setStringValue:alarm.name];
 	}
-	[lblClock setFont:[NSFont systemFontOfSize:40]];
+	[lblClock setFont:[NSFont systemFontOfSize:44]];
 	[lblName setFont:[NSFont systemFontOfSize:16]];
 	//window
 	//self.window.backgroundColor = [NSColor colorWithDeviceRed:0 green:0 blue:0 alpha:0.5];

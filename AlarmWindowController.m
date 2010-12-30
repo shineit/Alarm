@@ -34,7 +34,7 @@
 	
 	//ringtones
 	[cboxRingtone removeAllItems];
-	[cboxRingtone addItemsWithTitles:[Action ringtones]];
+	[cboxRingtone addItemsWithTitles:[Action ringtonesNames]];
 	
 	//current time
 	NSDate *tmpDate = [NSDate date];
@@ -74,7 +74,7 @@
 		if ([ringtone hasPrefix:@"ring://"]) {
 			//RINGTONE
 			[matrixRingtone selectCellWithTag:0];
-			[cboxRingtone selectItemWithTitle:ringtone];
+			[cboxRingtone selectItemAtIndex:[Action ringtoneIndex:ringtone]];
 		}
 		else {
 			[matrixRingtone selectCellWithTag:1];
@@ -108,7 +108,7 @@
 	NSButtonCell *cell = [matrixRingtone selectedCell];
 	if (cell.tag == 0) {
 		//RINGTONE
-		ringtone = [[cboxRingtone selectedItem] title];
+		ringtone = [Action ringtoneAtIndex:[cboxRingtone indexOfSelectedItem]];
 	}
 	else if (cell.tag == 1) {
 		//CUSTOM Media File
@@ -165,13 +165,24 @@
 
 - (void)windowDidLoad {
 	[self initDefaultsValues];
+	[self matrixRingtoneChanged:nil];
+	[self chboxRepeatChanged:nil];
+	
 	//load values from alarm
 	if (self.alarm) {
 		[self loadValuesFromAlarm:self.alarm];
 	}
+	//window title
+	if (currentAction == ADD_ACTION) {
+		self.window.title = NSLocalizedString(@"Create a new alarm",@"Alarm window title");
+	}
+	else if (currentAction == EDIT_ACTION) {
+		self.window.title = NSLocalizedString(@"Edit alarm",@"Alarm window title");
+	}
 }
 
 -(BOOL)OffwindowShouldClose:(id)sender {
+	//TODO
 	return NO;
 }
 
@@ -211,12 +222,18 @@
 		//RINGTONE
 		[cboxRingtone setEnabled:YES];
 		[btnChooseFile setEnabled:NO];
+		[lblPath setEnabled:NO];
 	}
 	else if (cell.tag == 1) {
 		//CUSTOM Media File
 		[cboxRingtone setEnabled:NO];
 		[btnChooseFile setEnabled:YES];
+		[lblPath setEnabled:YES];
 	}
+}
+
+-(IBAction)didClickPath:(id)sender {
+	
 }
 
 -(void)dealloc {
