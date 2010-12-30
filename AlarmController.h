@@ -12,14 +12,21 @@
 #include <Security/AuthorizationTags.h>
 
 @class AlarmWindowController;
+@class AlarmOverlayController;
+@class PrefsWindowController;
 
 @interface AlarmController : NSObject {
 	NSMutableArray *alarms;
 	IBOutlet NSTableView *alarmsTable;
+	IBOutlet NSWindow *window;
 	
 	AlarmWindowController *controller;
 	
 	AuthorizationRef myAuthorizationRef; 
+	
+	AlarmOverlayController *overlayController;
+	PrefsWindowController *prefsController;
+	NSStatusItem *statusItem;
 }
 
 
@@ -37,6 +44,7 @@
 -(IBAction)uiAddAlarm:(id)sender;
 -(IBAction)uiEditAlarm:(id)sender;
 -(IBAction)uiRemoveAlarm:(id)sender;
+-(IBAction)showPreferences:(id)sender;
 
 - (NSString *) pathForDataFile;
 - (void) saveDataToDisk;

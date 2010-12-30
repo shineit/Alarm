@@ -40,6 +40,19 @@ static PrefsManager *sharedInstance = nil;
 	return snoozeInterval;
 }
 
+-(int)writeSnoozeInterval:(int)snoozeInterval {
+	//read snooze prefs from pref file
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	
+	if (snoozeInterval == 0) {
+		//by default 5 min snooze interval
+		snoozeInterval = 60*5;
+	}
+	[defaults setInteger:snoozeInterval forKey:@"AlarmSnoozeInterval"];
+	
+	return snoozeInterval;
+}
+
 -(void)dealloc {
 	[super dealloc];
 }

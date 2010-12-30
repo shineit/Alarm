@@ -25,7 +25,7 @@
 	//Save value
 	int wsnoozeInterval = [[PrefsManager sharedInstance] writeSnoozeInterval:(snoozeInterval*60)];
 	//Display
-	[lblSnoozeInterval setStringValue:[NSString stringWithFormat:@"%d mn",snoozeInterval]];
+	[lblSnoozeInterval setStringValue:[NSString stringWithFormat:NSLocalizedString(@"%d mn",@"Snooze interval in Prefs"),snoozeInterval]];
 	
 }
 

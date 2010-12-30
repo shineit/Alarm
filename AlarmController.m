@@ -13,6 +13,8 @@
 #import "AlarmActivationCell.h"
 #import "AlarmStopCell.h"
 #import <IOKit/pwr_mgt/IOPMLib.h>
+#import "AlarmOverlayController.h"
+#import "PrefsController.h"
 
 #define INTERVAL 0.1 //in seconds
 
@@ -146,14 +148,40 @@
 	controller = [[AlarmWindowController alloc] initWithAlarm:nil Action:ADD_ACTION Controller:self] ;
 	[controller window];
 	[controller showWindow:self];
+	
 }
 
+- (void)didEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
+	
+    [sheet orderOut:self];
+	
+}
+
+-(void)showNoSelectionAlert {
+	NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+	
+	[alert setIcon:[NSImage imageNamed:@"clock"]];
+	
+	[alert addButtonWithTitle:NSLocalizedString(@"OK",@"No selection sheet")];
+	
+	[alert setMessageText:NSLocalizedString(@"No alarm selected.",@"No selection sheet")];
+	
+	[alert setInformativeText:NSLocalizedString(@"Please select an alarm to edit or delete.",@"No selection sheet")];
+	
+	[alert setAlertStyle:NSWarningAlertStyle];
+	
+	//
+	[alert beginSheetModalForWindow:window modalDelegate:self didEndSelector:nil contextInfo:nil];
+	
+
+}
 
 -(IBAction)uiEditAlarm:(id)sender {
 	//get current selection
 	int index = [alarmsTable selectedRow];
 	if (index == -1) {
 		//no rows selected
+		[self showNoSelectionAlert];
 		return;
 	}
 	
@@ -170,6 +198,7 @@
 	int index = [alarmsTable selectedRow];
 	if (index == -1) {
 		//no rows selected
+		[self showNoSelectionAlert];
 		return;
 	}
 	
@@ -178,12 +207,16 @@
 	[alarmsTable reloadData];
 }
 
--(void)dealloc {
-	[controller release];
-	[alarms release];
-	[super dealloc];
+-(IBAction)showPreferences:(id)sender {
+	NSLog(@"prefs...");
+	if (prefsController) {
+		[prefsController release];
+		prefsController = nil;
+	}
+	prefsController = [PrefsWindowController alloc];
+	[prefsController initWithWindowNibName:@"Prefs"];
+	[prefsController showWindow:window];
 }
-
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
@@ -268,6 +301,25 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[alarmsTable reloadData];
 }
 
+- (void)activateStatusMenu {
+	
+    NSStatusBar *bar = [NSStatusBar systemStatusBar];
+	
+    statusItem = [bar statusItemWithLength:NSSquareStatusItemLength];
+    [statusItem retain];
+	
+	
+	
+    [statusItem setImage:[NSImage imageNamed:@"ringtone_16"]];
+	
+    [statusItem setHighlightMode:YES];
+	[statusItem setTarget:self];
+	[statusItem setAction:@selector(statusItemClicked:)];
+	
+    //[theItem setMenu:theMenu];
+	
+}
+
 - (void) awakeFromNib { 
 	[NSApp setDelegate: self]; 
 	[self loadDataFromDisk]; 
@@ -283,7 +335,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	AlarmStopCell* btnCell = [[[AlarmStopCell alloc] init] autorelease];
 	//[btnCell setButtonType:NSMomentaryChangeButton];
 	[btnCell setBezelStyle:NSTexturedRoundedBezelStyle];
-	[btnCell setTitle:@"Stop"];
+	[btnCell setTitle:NSLocalizedString(@"Stop",@"Alarm list Stop")];
 	[activationColumn setDataCell: btnCell];
 	
 	AlarmActivationCell* chboxCell = [[[AlarmActivationCell alloc] init] autorelease];
@@ -297,6 +349,13 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	//file for notification
 	[self fileNotifications];
 	
+	//add status item
+	[self activateStatusMenu];
+	
+}
+
+- (void) applicationWillTerminate: (NSNotification *)note { 
+	[self saveDataToDisk]; 
 }
 
 -(BOOL)authorizeUser {
@@ -361,8 +420,26 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 														   selector: @selector(receiveWakeNote:) name: NSWorkspaceDidWakeNotification object: NULL];
 }
 
-- (void) applicationWillTerminate: (NSNotification *)note { 
-	[self saveDataToDisk]; 
+-(BOOL)windowShouldClose:(id)sender {
+	NSLog(@"window should close");
+	//instead hide window
+	[window orderOut:self];
+	return NO;
+}
+
+-(void)statusItemClicked:(id)sender {
+	NSLog(@"window should show");
+	//show window if hidden
+	[window makeKeyAndOrderFront:self];
+}
+
+-(void)dealloc {
+	[statusItem release];
+	[prefsController release];
+	[overlayController release];
+	[controller release];
+	[alarms release];
+	[super dealloc];
 }
 
 @end

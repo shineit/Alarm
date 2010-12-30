@@ -10,6 +10,8 @@
 
 #define ANY -1
 
+@class AlarmOverlayController;
+
 @interface Alarm : NSObject <NSCoding, NSCopying> {
 	NSString *name;
 	NSString *uid;
@@ -23,6 +25,10 @@
 	
 	//flag to avoid alarm triggering on and on
 	BOOL allowToTrigger;
+	
+	NSTimer *snoozeTimer;
+	
+	AlarmOverlayController *overlayController;
 	
 }
 
@@ -50,6 +56,7 @@
 -(void)addAction:(id)action;
 -(void)performActions;
 -(void)stop;
+-(void)snoozeAlarm;
 -(NSString* )ringtone;
 
 @end

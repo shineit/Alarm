@@ -10,6 +10,7 @@
 #import "Action.h"
 #import "SoundController.h"
 #import "PrefsManager.h"
+#import "AlarmOverlayController.h"
 
 @implementation Alarm
 
@@ -113,9 +114,19 @@
 	}
 }
 
+-(void)showOverlayWindow {
+	if (overlayController) {
+		[overlayController release];
+	}
+	overlayController = [[AlarmOverlayController alloc] initWithAlarm:self] ;
+	[overlayController window];
+	[overlayController showWindow:nil];
+}
+
 -(void)trigger:(NSTimer *)timer {
 	NSLog(@"%@ triggering...", name);
 	if (!stopped) {
+		[self showOverlayWindow];
 		[self performActions];
 		nbSnooze++;
 		
@@ -125,7 +136,7 @@
 			int snoozeInterval = [[PrefsManager sharedInstance] readSnoozeInterval];
 			
 			if (nbSnooze <= maxSnooze) {
-				[NSTimer scheduledTimerWithTimeInterval:snoozeInterval target:self selector:@selector(trigger:) userInfo:nil repeats:NO];
+				snoozeTimer = [NSTimer scheduledTimerWithTimeInterval:snoozeInterval target:self selector:@selector(trigger:) userInfo:nil repeats:NO];
 			}
 			else {
 				//stop snoozing if maxSnooze reached
@@ -219,6 +230,19 @@
 	[[SoundController sharedInstance] stopAllPlayback];
 }
 
+-(void)snoozeAlarm {
+	//stop all playback
+	[[SoundController sharedInstance] stopAllPlayback];
+	
+	//and schedule later triggering
+	if (snoozeTimer && [snoozeTimer isValid]) {
+		[snoozeTimer invalidate];
+	}
+	
+	int snoozeInterval = [[PrefsManager sharedInstance] readSnoozeInterval];
+	snoozeTimer = [NSTimer scheduledTimerWithTimeInterval:snoozeInterval target:self selector:@selector(trigger:) userInfo:nil repeats:NO];
+}
+
 -(void)addAction:(id)action {
 	if (action) {
 		[actions insertObject:action atIndex:0];
@@ -251,34 +275,34 @@
 		BOOL sun = [weekday member:[NSNumber numberWithInt:1]] != nil;
 		
 		if (mon && tue & wed && thu && fri && sat && sun) {
-			recurrence = @"everyday";
+			recurrence = NSLocalizedString(@"everyday",@"Alarm description");
 		}
 		else if	(mon && tue & wed && thu && fri) {
-			recurrence = @"every work day";
+			recurrence = NSLocalizedString(@"every work day",@"Alarm description");
 		}
 		else if (mon || tue || wed || thu || fri || sat || sun) {
 			//TODO
-			recurrence = @"every ";
+			recurrence =  NSLocalizedString(@"every ",@"Alarm description");
 			if (mon) {
-				recurrence = [recurrence stringByAppendingFormat:@"monday, "];
+				recurrence = [recurrence stringByAppendingFormat:NSLocalizedString(@"monday, ",@"Alarm description")];
 			}
 			if (tue) {
-				recurrence = [recurrence stringByAppendingFormat:@"tuesday, "];
+				recurrence = [recurrence stringByAppendingFormat:NSLocalizedString(@"tuesday, ",@"Alarm description")];
 			}
 			if (wed) {
-				recurrence = [recurrence stringByAppendingFormat:@"wednesday, "];
+				recurrence = [recurrence stringByAppendingFormat:NSLocalizedString(@"wednesday, ",@"Alarm description")];
 			}
 			if (thu) {
-				recurrence = [recurrence stringByAppendingFormat:@"thursday, "];
+				recurrence = [recurrence stringByAppendingFormat:NSLocalizedString(@"thursday, ",@"Alarm description")];
 			}
 			if (fri) {
-				recurrence = [recurrence stringByAppendingFormat:@"friday, "];
+				recurrence = [recurrence stringByAppendingFormat:NSLocalizedString(@"friday, ",@"Alarm description")];
 			}
 			if (sat) {
-				recurrence = [recurrence stringByAppendingFormat:@"saturday, "];
+				recurrence = [recurrence stringByAppendingFormat:NSLocalizedString(@"saturday, ",@"Alarm description")];
 			}
 			if (sun) {
-				recurrence = [recurrence stringByAppendingFormat:@"sunday, "];
+				recurrence = [recurrence stringByAppendingFormat:NSLocalizedString(@"sunday, ",@"Alarm description")];
 			}
 			//remove extra comma
 			if ([recurrence hasSuffix:@", "]) {
@@ -286,15 +310,15 @@
 			}
 		}
 		else {
-			recurrence = @"At ";
+			recurrence = NSLocalizedString(@"At ",@"Alarm description");
 		}
 	}
 	
 	if (!recurrence) {
-		recurrence = @"At ";
+		recurrence = NSLocalizedString(@"At ",@"Alarm description");
 	}
 	else {
-		recurrence = [recurrence stringByAppendingFormat:@" at"];
+		recurrence = [recurrence stringByAppendingFormat:NSLocalizedString(@" at",@"Alarm description")];
 	}
 
 	
@@ -303,6 +327,7 @@
 }
 
 -(void)dealloc {
+	[overlayController release];
 	[weekday release];
 	[dayOfMonth release];
 	[month release];

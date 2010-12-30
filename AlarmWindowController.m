@@ -171,7 +171,7 @@
 	}
 }
 
--(BOOL)windowShouldClose:(id)sender {
+-(BOOL)OffwindowShouldClose:(id)sender {
 	return NO;
 }
 

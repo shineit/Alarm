@@ -15,6 +15,7 @@
 
 -(int)readMaxSnooze;
 -(int)readSnoozeInterval;
+-(int)writeSnoozeInterval:(int)snoozeInterval;
 
 + (PrefsManager *)sharedInstance;
 
