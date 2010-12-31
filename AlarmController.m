@@ -120,7 +120,7 @@
 		}
 		if (i == [alarms count]) {
 			[alarms addObject:alarm];
-			index = [alarms count];
+			index = [alarms count]-1;
 		}
 	}
 	//reload table
@@ -244,6 +244,16 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 }
 
 -(void)didClickColumn:(id)sender {
+	
+	//check to see if it's a double click
+	if (lastClickDate && fabs([lastClickDate timeIntervalSinceNow]) < 0.3) {
+		//edit alarm
+		[self uiEditAlarm:nil];
+		lastClickDate = [[NSDate date] retain];
+		return;
+		
+	}
+	
 	int rowIndex = [alarmsTable clickedRow];
 	int colIndex = [alarmsTable clickedColumn];
 	if (rowIndex <0 || rowIndex > [alarms count] || colIndex == -1) {
@@ -264,12 +274,14 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		
 		[self reloadAlarmsTable];
 	}
+	
+	lastClickDate = [[NSDate date] retain];
 }
 
 
 - (NSString *) pathForDataFile {
 	NSFileManager *fileManager = [NSFileManager defaultManager]; 
-	NSString *folder = @"~/Library/Application Support/Alarm"; 
+	NSString *folder = @"~/Library/Application Support/Reveil"; 
 	folder = [folder stringByExpandingTildeInPath]; 
 	if ([fileManager fileExistsAtPath: folder] == NO) { 
 		[fileManager createDirectoryAtPath: folder attributes: nil]; 
@@ -445,6 +457,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 }
 
 -(void)dealloc {
+	[lastClickDate release];
 	[statusItem release];
 	[prefsController release];
 	[overlayController release];

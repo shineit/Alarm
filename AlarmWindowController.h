@@ -30,6 +30,8 @@
 	IBOutlet NSMatrix *matrixRingtone;
 	IBOutlet NSTextField *lblPath;
 	IBOutlet NSButton *btnChooseFile;
+	
+	NSString *customMediaPath;
 }
 
 @property (retain, nonatomic) Alarm *alarm;
@@ -38,9 +40,11 @@
 -(IBAction)chboxRepeatChanged:(id)sender;
 -(IBAction)matrixRingtoneChanged:(id)sender;
 -(IBAction)didClickPath:(id)sender;
+-(IBAction)ringtoneChanged:(id)sender;
 
 -(id)initWithAlarm:(id)alarm Action:(int)action Controller:(AlarmController *)controller;
 -(void)loadValuesFromAlarm:(Alarm *)alarm;
+-(BOOL)validatesFields;
 
 -(IBAction)cancel:(id)sender;
 -(IBAction)apply:(id)sender;

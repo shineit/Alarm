@@ -27,6 +27,8 @@
 	AlarmOverlayController *overlayController;
 	PrefsWindowController *prefsController;
 	NSStatusItem *statusItem;
+	
+	NSDate *lastClickDate;
 }
 
 

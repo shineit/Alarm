@@ -37,7 +37,7 @@
 	NSString* primaryText   = [[self dataDelegate] primaryTextForCell:self data: data];
 	
 	NSDictionary* primaryTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys: primaryColor, NSForegroundColorAttributeName,
-										   [NSFont systemFontOfSize:13], NSFontAttributeName, nil];	
+										   [NSFont boldSystemFontOfSize:13], NSFontAttributeName, nil];	
 	[primaryText drawAtPoint:NSMakePoint(cellFrame.origin.x+10, cellFrame.origin.y) withAttributes:primaryTextAttributes];
 	
 	NSColor* secondaryColor = [self isHighlighted] ? [NSColor alternateSelectedControlTextColor] : [NSColor disabledControlTextColor];

@@ -275,13 +275,12 @@
 								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>1058C7A0FEA54F0111CA2CBB</string>
 								<string>1058C7A2FEA54F0111CA2CBB</string>
+								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
-									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -316,14 +315,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>AlarmController.m</string>
+								<string>Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +328,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>AlarmController.m</string>
+										<string>Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>7D029CB412CD3B1200882BDA</string>
+										<string>7D029DAA12CE464100882BDA</string>
 										<key>history</key>
 										<array>
 											<string>7D27D5E712838A9A00FBDCB1</string>
@@ -346,29 +343,29 @@
 											<string>7DD719AC12A2A074001393EB</string>
 											<string>7DD719B112A2A1E9001393EB</string>
 											<string>7DD719B912A2A1E9001393EB</string>
-											<string>7DD719BA12A2A1E9001393EB</string>
 											<string>7DD719BB12A2A1E9001393EB</string>
-											<string>7DD719BC12A2A1E9001393EB</string>
 											<string>7DD719BD12A2A1E9001393EB</string>
 											<string>7DD719BE12A2A1E9001393EB</string>
-											<string>7DD719BF12A2A1E9001393EB</string>
-											<string>7DD719C012A2A1E9001393EB</string>
 											<string>7DD719D412A2A3C1001393EB</string>
-											<string>7DB47CC812ABFF7600650C4C</string>
-											<string>7D029BF312CCFEC200882BDA</string>
 											<string>7D029C3112CD10CE00882BDA</string>
-											<string>7D029C3212CD10CE00882BDA</string>
-											<string>7D029C3312CD10CE00882BDA</string>
-											<string>7D029C3412CD10CE00882BDA</string>
-											<string>7D029C7912CD32B700882BDA</string>
-											<string>7D029C7A12CD32B700882BDA</string>
-											<string>7D029C7B12CD32B700882BDA</string>
-											<string>7D029C9912CD38AD00882BDA</string>
 											<string>7D029C9A12CD38AD00882BDA</string>
 											<string>7D029C9B12CD38AD00882BDA</string>
-											<string>7D029CA112CD38E300882BDA</string>
-											<string>7D029CB312CD3B1200882BDA</string>
-											<string>7D029C5612CD16D800882BDA</string>
+											<string>7D029CBA12CD40B700882BDA</string>
+											<string>7D029CBB12CD40B700882BDA</string>
+											<string>7D029CE712CD47D400882BDA</string>
+											<string>7D029CF012CE2FE100882BDA</string>
+											<string>7D029CF112CE2FE100882BDA</string>
+											<string>7D029CF512CE2FE100882BDA</string>
+											<string>7D029CF612CE2FE100882BDA</string>
+											<string>7D029D3C12CE398D00882BDA</string>
+											<string>7D029D3D12CE398D00882BDA</string>
+											<string>7D029D6812CE3C9300882BDA</string>
+											<string>7D029D8212CE403900882BDA</string>
+											<string>7D029DA512CE464100882BDA</string>
+											<string>7D029DA612CE464100882BDA</string>
+											<string>7D029DA712CE464100882BDA</string>
+											<string>7D029DA812CE464100882BDA</string>
+											<string>7D029DA912CE464100882BDA</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -566,7 +563,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>7D029CB512CD3B1200882BDA</string>
 		<string>7D029BFE12CCFEC200882BDA</string>
 		<string>7D029BFF12CCFEC200882BDA</string>
 		<string>1CD10A99069EF8BA00B06720</string>

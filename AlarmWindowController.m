@@ -9,6 +9,7 @@
 #import "AlarmWindowController.h"
 #import "Action.h"
 #import "AlarmController.h"
+#import "SoundController.h"
 
 
 @implementation AlarmWindowController
@@ -79,10 +80,10 @@
 		else {
 			[matrixRingtone selectCellWithTag:1];
 			if ([ringtone hasPrefix:@"music://"]) {
-				[lblPath setStringValue:[ringtone substringFromIndex:8]];
+				[self setCustomMediaPath:[ringtone substringFromIndex:8]];
 			}
 			else {
-				[lblPath setStringValue:ringtone];
+				[self setCustomMediaPath:ringtone];
 			}
 
 		}
@@ -112,7 +113,7 @@
 	}
 	else if (cell.tag == 1) {
 		//CUSTOM Media File
-		ringtone = [lblPath stringValue];
+		ringtone = customMediaPath;
 		ringtone = [@"music://" stringByAppendingFormat:@"%@",ringtone];
 	}
 	//repeat and weekday
@@ -172,12 +173,15 @@
 	if (self.alarm) {
 		[self loadValuesFromAlarm:self.alarm];
 	}
+	
 	//window title
 	if (currentAction == ADD_ACTION) {
 		self.window.title = NSLocalizedString(@"Create a new alarm",@"Alarm window title");
 	}
 	else if (currentAction == EDIT_ACTION) {
 		self.window.title = NSLocalizedString(@"Edit alarm",@"Alarm window title");
+		//auto enable alarm cause user might forget
+		[chboxEnabled setState:YES];
 	}
 }
 
@@ -191,23 +195,33 @@
 }
 
 -(IBAction)apply:(id)sender {
-	//save values
-	[self saveValuesToAlarm];
-	//close window
-	[self.window performClose:self];
+	if ([self validatesFields]) {
+		//save values
+		[self saveValuesToAlarm];
+		//close window
+		[self.window performClose:self];
+	}
+}
+
+-(void)setCustomMediaPath:(NSString *)mediaPath {
+
+	customMediaPath = [mediaPath copy];
+	//NSButtonCell *cell = [matrixRingtone cellWithTag:1]; //Custom media radio button
+	[lblPath setStringValue:[customMediaPath lastPathComponent]];
+
 }
 
 -(IBAction)chooseMediaFile:(id)sender {
 	NSOpenPanel *panel = [NSOpenPanel openPanel];
 	[panel setAllowsMultipleSelection:NO];
 	[panel setCanChooseDirectories:NO];
-	[panel setAllowedFileTypes:[NSArray arrayWithObjects:@"mp3",@"wav",@"aiff",nil]];
+	[panel setAllowedFileTypes:[NSArray arrayWithObjects:@"mp3",@"wav",@"m4a",@"aac",nil]];
 	int res = [panel runModal];
 	
 	if(res == NSOKButton){
 		NSURL *url = [panel URL];
 		NSString *path = [url path];
-		[lblPath setStringValue:path];
+		[self setCustomMediaPath:path];
 	}
 }
 
@@ -217,6 +231,9 @@
 }
 
 -(IBAction)matrixRingtoneChanged:(id)sender {
+	//stop sound playback in case a ringtone was playing
+	[[SoundController sharedInstance] stopAllPlayback];
+	
 	NSButtonCell *cell = [matrixRingtone selectedCell];
 	if (cell.tag == 0) {
 		//RINGTONE
@@ -236,7 +253,61 @@
 	
 }
 
+-(IBAction)ringtoneChanged:(id)sender {
+	//make it play
+	NSString *selectedRingtone = [Action ringtoneAtIndex:[cboxRingtone indexOfSelectedItem]];
+	[[SoundController sharedInstance] playMusicFrom:selectedRingtone Repeat:0];
+	
+}
+
+-(void)showErrorAlert:(NSString *)message {
+	NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+	
+	[alert setIcon:[NSImage imageNamed:@"clock"]];
+	
+	[alert addButtonWithTitle:NSLocalizedString(@"OK",@"No selection sheet")];
+	
+	//[alert setMessageText:message];
+	
+	[alert setInformativeText:message];
+	
+	[alert setAlertStyle:NSWarningAlertStyle];
+	
+	[alert beginSheetModalForWindow:self.window modalDelegate:self didEndSelector:nil contextInfo:nil];
+	
+}
+
+-(BOOL)validatesFields {
+	
+	NSString *message = nil;
+	
+	if ([[txtName stringValue] length] == 0) {
+		message = NSLocalizedString(@"Please enter a name for the alarm.",@"Alarm window");
+		[txtName becomeFirstResponder];
+	}
+	else if ([[matrixRingtone selectedCell] tag] == 1 && (customMediaPath == nil || [customMediaPath length] == 0)) {
+		message = NSLocalizedString(@"Please choose a custome file to use as ringtone.",@"Alarm window");
+		[btnChooseFile becomeFirstResponder];
+	}
+	
+	
+	if (message == nil) {
+		return YES;
+	}
+	else {
+		[self showErrorAlert:message];
+		return NO;
+	}
+
+	
+}
+
+-(void) awakeFromNib {
+	[lblPath setFont:[NSFont boldSystemFontOfSize:12]];
+}
+
 -(void)dealloc {
+	[customMediaPath release];
 	[alarm release];
 	[super dealloc];
 }

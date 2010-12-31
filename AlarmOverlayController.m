@@ -85,6 +85,7 @@
 
 -(void)windowDidLoad {
 	[self.window center];
+	//TODO better handling of alarm events
 }
 
 -(BOOL)windowShouldClose:(id)sender {
