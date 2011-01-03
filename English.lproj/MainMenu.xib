@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="371"/>
+			<integer value="372"/>
 			<integer value="29"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
@@ -333,7 +333,7 @@
 			<object class="NSWindowTemplate" id="972006081">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{335, 495}, {360, 255}}</string>
+				<string key="NSWindowRect">{{449, 344}, {360, 255}}</string>
 				<int key="NSWTFlags">1946157056</int>
 				<string key="NSWindowTitle">Reveil</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -575,8 +575,8 @@
 										<bool key="EncodedWithXMLCoder">YES</bool>
 										<object class="NSTableView" id="1029893711">
 											<reference key="NSNextResponder" ref="971458049"/>
-											<int key="NSvFlags">274</int>
-											<string key="NSFrameSize">{480, 360}</string>
+											<int key="NSvFlags">301</int>
+											<string key="NSFrameSize">{358, 253}</string>
 											<reference key="NSSuperview" ref="971458049"/>
 											<int key="NSViewLayerContentsRedrawPolicy">2</int>
 											<bool key="NSEnabled">YES</bool>
@@ -650,7 +650,7 @@
 												</object>
 												<object class="NSTableColumn" id="661572161">
 													<string key="NSIdentifier">alarmtext</string>
-													<double key="NSWidth">250</double>
+													<double key="NSWidth">248</double>
 													<double key="NSMinWidth">40</double>
 													<double key="NSMaxWidth">1000</double>
 													<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -718,6 +718,7 @@
 											<int key="NSTvFlags">381681664</int>
 											<reference key="NSDelegate"/>
 											<reference key="NSDataSource"/>
+											<string key="NSAutosaveName">alarmstable</string>
 											<int key="NSColumnAutoresizingStyle">4</int>
 											<int key="NSDraggingSourceMaskForLocal">15</int>
 											<int key="NSDraggingSourceMaskForNonLocal">0</int>
@@ -725,7 +726,7 @@
 											<int key="NSTableViewDraggingDestinationStyle">0</int>
 										</object>
 									</object>
-									<string key="NSFrame">{{1, 1}, {480, 360}}</string>
+									<string key="NSFrame">{{1, 1}, {358, 253}}</string>
 									<reference key="NSSuperview" ref="142932090"/>
 									<reference key="NSNextKeyView" ref="1029893711"/>
 									<int key="NSViewLayerContentsRedrawPolicy">2</int>
@@ -755,7 +756,7 @@
 									<double key="NSPercent">0.97363083164300201</double>
 								</object>
 							</object>
-							<string key="NSFrame">{{-1, -106}, {482, 362}}</string>
+							<string key="NSFrameSize">{360, 255}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSNextKeyView" ref="971458049"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
@@ -770,7 +771,7 @@
 					<reference key="NSSuperview"/>
 					<int key="NSViewLayerContentsRedrawPolicy">2</int>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
 				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
 				<string key="NSFrameAutosaveName">mainwindow</string>
 			</object>
@@ -1563,9 +1564,9 @@
 					<string>{{475, 832}, {234, 43}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{439, 230}, {360, 255}}</string>
+					<string>{{450, 278}, {360, 255}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{439, 230}, {360, 255}}</string>
+					<string>{{450, 278}, {360, 255}}</string>
 					<integer value="1"/>
 					<string>{{33, 99}, {480, 360}}</string>
 					<string>{3.40282e+38, 3.40282e+38}</string>
@@ -1574,7 +1575,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAAC/gAAAw7OAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAAA/gAAAw3wAAA</bytes>
 					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
