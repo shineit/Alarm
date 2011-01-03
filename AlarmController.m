@@ -443,7 +443,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 }
 
 -(BOOL)windowShouldClose:(id)sender {
-	NSLog(@"window should close");
 	//instead hide window
 	[window orderOut:self];
 	return NO;

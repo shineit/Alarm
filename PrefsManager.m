@@ -33,7 +33,7 @@ static PrefsManager *sharedInstance = nil;
 	int snoozeInterval = [defaults integerForKey:@"AlarmSnoozeInterval"];
 	if (snoozeInterval == 0) {
 		//by default 10 min snooze interval
-		snoozeInterval = 60;
+		snoozeInterval = 60*10;
 		[defaults setInteger:snoozeInterval forKey:@"AlarmSnoozeInterval"];
 	}
 	
