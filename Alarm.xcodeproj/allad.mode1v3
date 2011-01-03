@@ -281,11 +281,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>0</integer>
+									<integer>66</integer>
+									<integer>65</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {261, 660}}</string>
+							<string>{{0, 598}, {261, 660}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -332,7 +333,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>7D029DAA12CE464100882BDA</string>
+										<string>7DD07DCF12CE6588004B5BDB</string>
 										<key>history</key>
 										<array>
 											<string>7D27D5E712838A9A00FBDCB1</string>
@@ -365,7 +366,7 @@
 											<string>7D029DA612CE464100882BDA</string>
 											<string>7D029DA712CE464100882BDA</string>
 											<string>7D029DA812CE464100882BDA</string>
-											<string>7D029DA912CE464100882BDA</string>
+											<string>7DD07DBF12CE5A24004B5BDB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -377,14 +378,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {997, 523}}</string>
+								<string>{{0, 0}, {997, 518}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 59 1280 719 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>523pt</string>
+							<string>518pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -397,14 +398,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 528}, {997, 150}}</string>
+								<string>{{0, 523}, {997, 155}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 59 1280 719 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>150pt</string>
+							<string>155pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -423,9 +424,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>7D029BDD12CCF6A500882BDA</string>
+				<string>7DD07DAB12CE4D76004B5BDB</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>7D029BDE12CCF6A500882BDA</string>
+				<string>7DD07DAC12CE4D76004B5BDB</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -563,11 +564,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>7D029BFE12CCFEC200882BDA</string>
-		<string>7D029BFF12CCFEC200882BDA</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>7D27D570128366B400FBDCB1</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/allad/Documents/dev/Alarm/Alarm.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -592,7 +590,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>AlarmController.m</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -609,8 +607,6 @@
 							<string>218pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -650,7 +646,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>7D27D570128366B400FBDCB1</string>
-				<string>7D029BDF12CCF6A500882BDA</string>
+				<string>7DD07DAD12CE4D76004B5BDB</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -772,13 +768,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>7D029BF612CCFEC200882BDA</string>
+				<string>7DD07DC112CE5A24004B5BDB</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>7D029BF712CCFEC200882BDA</string>
-				<string>7D029BF812CCFEC200882BDA</string>
-				<string>7D029BF912CCFEC200882BDA</string>
-				<string>7D029BFA12CCFEC200882BDA</string>
-				<string>7D029BFB12CCFEC200882BDA</string>
+				<string>7DD07DC212CE5A24004B5BDB</string>
+				<string>7DD07DC312CE5A24004B5BDB</string>
+				<string>7DD07DC412CE5A24004B5BDB</string>
+				<string>7DD07DC512CE5A24004B5BDB</string>
+				<string>7DD07DC612CE5A24004B5BDB</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>

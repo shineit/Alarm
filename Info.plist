@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>clock.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.ycsoft.${PRODUCT_NAME:identifier}</string>
+	<string>org.ycsoft.reveil</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -28,5 +28,7 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
 </dict>
 </plist>
