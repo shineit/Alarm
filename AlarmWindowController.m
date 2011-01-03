@@ -249,10 +249,6 @@
 	}
 }
 
--(IBAction)didClickPath:(id)sender {
-	
-}
-
 -(IBAction)ringtoneChanged:(id)sender {
 	//make it play
 	NSString *selectedRingtone = [Action ringtoneAtIndex:[cboxRingtone indexOfSelectedItem]];
@@ -288,6 +284,20 @@
 	else if ([[matrixRingtone selectedCell] tag] == 1 && (customMediaPath == nil || [customMediaPath length] == 0)) {
 		message = NSLocalizedString(@"Please choose a custome file to use as ringtone.",@"Alarm window");
 		[btnChooseFile becomeFirstResponder];
+	}
+	else if ([chboxRepeat state]) {
+		//Repeat checked. Need at least one day selected
+		NSMutableSet *weekday = [NSMutableSet set];
+		for(int i=0; i<7; i++) {
+			NSNumber *nb = [NSNumber numberWithInt:(i+1)];
+			if ([sgmtControl isSelectedForSegment:i]) {
+				[weekday addObject:nb];
+			}
+		}
+		if ([weekday count] == 0) {
+			message = NSLocalizedString(@"Please select at least one day to repeat the alarm.",@"Alarm Window");
+			[sgmtControl becomeFirstResponder];
+		}
 	}
 	
 	
