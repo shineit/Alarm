@@ -372,6 +372,12 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 }
 
+- (void)applicationWillBecomeActive:(NSNotification *)aNotification {
+	//show window if hidden
+	[window makeKeyAndOrderFront:self];
+	
+}
+
 - (void) applicationWillTerminate: (NSNotification *)note { 
 	[self saveDataToDisk]; 
 }
@@ -452,7 +458,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSLog(@"window should show");
 	//show window if hidden
 	[window makeKeyAndOrderFront:self];
-	//TODO do same for click on dock
 }
 
 -(void)dealloc {
