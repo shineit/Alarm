@@ -87,6 +87,9 @@
 		7D67E8B1128A29D5002048BF /* AlarmStopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmStopCell.m; sourceTree = "<group>"; };
 		7D74D81D1289CE5E0021111F /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = delete.png; path = Resources/delete.png; sourceTree = "<group>"; };
 		7D74D8201289D0170021111F /* ringtone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ringtone.png; path = Resources/ringtone.png; sourceTree = "<group>"; };
+		7DBCE50E12D93ED600E8884C /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7DBCE51712D9404900E8884C /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/AlarmWindow.xib; sourceTree = "<group>"; };
+		7DBCE51812D9405C00E8884C /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/AlarmOverlay.xib; sourceTree = "<group>"; };
 		7DD718BA129E3280001393EB /* PrefsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefsController.h; sourceTree = "<group>"; };
 		7DD718BB129E3280001393EB /* PrefsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefsController.m; sourceTree = "<group>"; };
 		7DD718BD129E328C001393EB /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Prefs.xib; sourceTree = "<group>"; };
@@ -342,6 +345,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1DDD58150DA1D0A300B32029 /* English */,
+				7DBCE50E12D93ED600E8884C /* French */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -350,6 +354,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7D1D8EBF129B995A0000BB4D /* English */,
+				7DBCE51812D9405C00E8884C /* French */,
 			);
 			name = AlarmOverlay.xib;
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7D1D8E57129A26F50000BB4D /* English */,
+				7DBCE51712D9404900E8884C /* French */,
 			);
 			name = AlarmWindow.xib;
 			sourceTree = "<group>";

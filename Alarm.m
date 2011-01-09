@@ -310,7 +310,7 @@
 			}
 		}
 		else {
-			recurrence = NSLocalizedString(@"",@"Alarm description");
+			recurrence = NSLocalizedString(@" ",@"Alarm description");
 		}
 	}
 	
