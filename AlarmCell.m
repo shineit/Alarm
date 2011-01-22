@@ -84,7 +84,7 @@
 	return [data name];
 }
 - (NSString*) secondaryTextForCell: (AlarmCell*) cell data: (NSObject*) data {
-	return [data prettyPrint];		
+	return [data prettyPrint:NO];		
 }
 
 

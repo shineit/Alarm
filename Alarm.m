@@ -263,7 +263,7 @@
 	return action.actionParams;
 }
 
--(NSString *)prettyPrint {
+-(NSString *)prettyPrint:(BOOL)shortVersion {
 	NSString *recurrence = nil;
 	if (repeat) {
 		BOOL mon = [weekday member:[NSNumber numberWithInt:2]] != nil;
@@ -282,7 +282,7 @@
 		}
 		else if (mon || tue || wed || thu || fri || sat || sun) {
 			//TODO
-			recurrence =  NSLocalizedString(@"every ",@"Alarm description");
+			recurrence =  NSLocalizedString(@"",@"Alarm description");
 			if (mon) {
 				recurrence = [recurrence stringByAppendingFormat:NSLocalizedString(@"monday, ",@"Alarm description")];
 			}
@@ -322,7 +322,14 @@
 	}
 
 	
-	NSString *tmp = [NSString stringWithFormat:@"%@ %@ %02d:%02d",NSLocalizedString(@"Rings",@"Alarm description"), recurrence, hours,mins];
+	NSString *tmp;
+	if (shortVersion) {
+		tmp = [NSString stringWithFormat:@"%@ %02d:%02d", recurrence, hours,mins];
+	}
+	else {
+		tmp = [NSString stringWithFormat:@"%@ %@ %02d:%02d",NSLocalizedString(@"Rings",@"Alarm description"), recurrence, hours,mins];
+	}
+	
 	return tmp;
 }
 

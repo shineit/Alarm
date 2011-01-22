@@ -177,6 +177,20 @@
 
 }
 
+-(void)editAlarmAtIndex:(int)index {
+	if (controller) {
+		[controller release];
+	}
+	controller = [[AlarmWindowController alloc] initWithAlarm:[alarms objectAtIndex:index] Action:EDIT_ACTION Controller:self] ;
+	[controller window];
+	[controller showWindow:self];
+}
+
+-(IBAction)editAlarmFromMenu:(id)sender {
+	NSMenuItem *menuItem = sender;
+	[self editAlarmAtIndex:[menuItem tag]];
+}
+
 -(IBAction)uiEditAlarm:(id)sender {
 	//get current selection
 	int index = [alarmsTable selectedRow];
@@ -186,12 +200,7 @@
 		return;
 	}
 	
-	if (controller) {
-		[controller release];
-	}
-	controller = [[AlarmWindowController alloc] initWithAlarm:[alarms objectAtIndex:index] Action:EDIT_ACTION Controller:self] ;
-	[controller window];
-	[controller showWindow:self];
+	[self editAlarmAtIndex:index];
 }
 
 -(IBAction)uiRemoveAlarm:(id)sender {
@@ -333,6 +342,75 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 }
 
+-(void)statusItemClicked:(id)sender {
+	//customize status menu
+	if (statusMenu) {
+		[statusMenu release];
+	}
+	
+	statusMenu = [[NSMenu allocWithZone:[NSMenu menuZone]] initWithTitle:@""];
+	
+	//add New Alarm menu item
+	NSMenuItem *newItem = [[NSMenuItem allocWithZone:[NSMenu menuZone]] initWithTitle:NSLocalizedString(@"New alarm",@"menu") action:@selector(uiAddAlarm:) keyEquivalent:@""];
+    [newItem setEnabled:YES];
+    [newItem setTarget:self];
+    [statusMenu addItem:newItem];
+    [newItem release];
+	//separator
+	[statusMenu addItem:[NSMenuItem separatorItem]];
+	
+	//now add alarms
+	if ([alarms count]>0) {
+		for(int i=0; i<[alarms count]; i++) {
+			Alarm *_alarm = [alarms objectAtIndex:i];
+			
+			newItem = [[NSMenuItem allocWithZone:[NSMenu menuZone]] initWithTitle:[NSString stringWithFormat:@"%@ (%@)",[_alarm name], [_alarm prettyPrint:YES]] action:@selector(editAlarmFromMenu:) keyEquivalent:@""];
+			[newItem setTarget:self];
+			[newItem setEnabled:YES];
+			[newItem setTag:i];
+			//checkmark if alarm enabled
+			if (_alarm.active) {
+				[newItem setState:NSOnState];
+			}
+			[statusMenu addItem:newItem];
+			[newItem release];
+		}
+	}
+	else {
+		//add Pending alarms message
+		newItem = [[NSMenuItem allocWithZone:[NSMenu menuZone]] initWithTitle:NSLocalizedString(@"Pending alarms",@"menu") action:nil keyEquivalent:@""];
+		[newItem setEnabled:NO];
+		[statusMenu addItem:newItem];
+		[newItem release];
+		
+	}
+	
+	//separator
+	[statusMenu addItem:[NSMenuItem separatorItem]];
+	//Preferences
+	newItem = [[NSMenuItem allocWithZone:[NSMenu menuZone]] initWithTitle:NSLocalizedString(@"Preferences",@"menu") action:@selector(showPreferences:) keyEquivalent:@""];
+    [newItem setEnabled:YES];
+    [newItem setTarget:self];
+    [statusMenu addItem:newItem];
+    [newItem release];	
+
+	
+	//separator
+	[statusMenu addItem:[NSMenuItem separatorItem]];
+	//Quit Reveil
+	newItem = [[NSMenuItem allocWithZone:[NSMenu menuZone]] initWithTitle:NSLocalizedString(@"Quit Reveil",@"menu") action:@selector(terminate:) keyEquivalent:@""];
+    [newItem setEnabled:YES];
+    [newItem setTarget:NSApp];
+    [statusMenu addItem:newItem];
+    [newItem release];
+	
+	//show menu
+	[statusItem popUpStatusItemMenu:statusMenu];
+	
+	//show window if hidden
+	//[window makeKeyAndOrderFront:self];
+}
+
 - (void) awakeFromNib { 
 	[NSApp setDelegate: self]; 
 	[self loadDataFromDisk]; 
@@ -452,12 +530,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	//instead hide window
 	[window orderOut:self];
 	return NO;
-}
-
--(void)statusItemClicked:(id)sender {
-	NSLog(@"window should show");
-	//show window if hidden
-	[window makeKeyAndOrderFront:self];
 }
 
 -(void)dealloc {

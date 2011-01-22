@@ -20,6 +20,8 @@
 	IBOutlet NSTableView *alarmsTable;
 	IBOutlet NSWindow *window;
 	
+	NSMenu *statusMenu;
+	
 	AlarmWindowController *controller;
 	
 	AuthorizationRef myAuthorizationRef; 
