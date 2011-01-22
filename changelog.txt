@@ -1,0 +1,7 @@
+1.0.1
+
+• Set the snooze interval to 10 minutes by default
+• Added french localizations
+• Fixed an issue where scrollbars would sometimes not appear in the alarm window
+• Fixed an issue where clicking the dock icon would sometimes not bring the alarm window in the front
+• Minor tweaks and fixes

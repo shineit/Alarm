@@ -423,7 +423,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (void) receiveSleepNote: (NSNotification*) note {
     NSLog(@"receiveSleepNote: %@", [note name]);
 	NSCalendarDate  *timeIntervalSinceNow = [NSCalendarDate dateWithTimeIntervalSinceNow:40];
-	IOReturn result = IOPMSchedulePowerEvent ((CFDateRef)timeIntervalSinceNow, NULL, CFSTR(kIOPMAutoWake));
+	IOReturn result = IOPMSchedulePowerEvent ((CFDateRef)timeIntervalSinceNow, NULL, CFSTR(kIOPMAutoWakeOrPowerOn));
 	NSLog(@"result: %d", result);
 	/*
 	if ([self authorizeUser]) {

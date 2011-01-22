@@ -155,7 +155,7 @@
 		return NO;
 	}
 	
-	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+	NSCalendar *gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
 	NSDateComponents *components = [gregorian components:(NSDayCalendarUnit | NSWeekdayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit | NSSecondCalendarUnit | NSMinuteCalendarUnit | NSHourCalendarUnit) fromDate:date];
 	NSNumber *anyNumber = [NSNumber numberWithInt:ANY];
 	

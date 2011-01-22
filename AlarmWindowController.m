@@ -49,10 +49,10 @@
 		[chboxEnabled setState:_alarm.active];
 		
 		//create a date with alarm's hour and mins
-		NSDateComponents *components = [[NSDateComponents alloc] init];
+		NSDateComponents *components = [[[NSDateComponents alloc] init] autorelease];
 		[components setHour:_alarm.hours]; 
 		[components setMinute:_alarm.mins]; 
-		NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+		NSCalendar *gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
 		NSDate *tmpDate = [gregorian dateFromComponents:components];
 		[timePicker setDateValue:tmpDate];
 		
@@ -100,7 +100,7 @@
 	BOOL enabled = [chboxEnabled state];
 	//time
 	NSDate *date = [timePicker dateValue];
-	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+	NSCalendar *gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
 	NSDateComponents *components = [gregorian components:(NSMinuteCalendarUnit | NSHourCalendarUnit) fromDate:date];
 	int hours = [components hour];
 	int mins = [components minute];

@@ -31,6 +31,7 @@
 		7D67E8B2128A29D5002048BF /* AlarmStopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D67E8B1128A29D5002048BF /* AlarmStopCell.m */; };
 		7D74D81E1289CE5E0021111F /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D74D81D1289CE5E0021111F /* delete.png */; };
 		7D74D8221289D0170021111F /* ringtone.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D74D8201289D0170021111F /* ringtone.png */; };
+		7DBCE52012D9453700E8884C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7DBCE51E12D9453700E8884C /* Localizable.strings */; };
 		7DD718BC129E3280001393EB /* PrefsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD718BB129E3280001393EB /* PrefsController.m */; };
 		7DD7191B129E3B23001393EB /* Prefs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DD7191A129E3B23001393EB /* Prefs.xib */; };
 		7DD7191E129E3B47001393EB /* AlarmWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DD7191D129E3B47001393EB /* AlarmWindow.xib */; };
@@ -90,6 +91,8 @@
 		7DBCE50E12D93ED600E8884C /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		7DBCE51712D9404900E8884C /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/AlarmWindow.xib; sourceTree = "<group>"; };
 		7DBCE51812D9405C00E8884C /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/AlarmOverlay.xib; sourceTree = "<group>"; };
+		7DBCE51F12D9453700E8884C /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7DBCE52112D9453F00E8884C /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7DD718BA129E3280001393EB /* PrefsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefsController.h; sourceTree = "<group>"; };
 		7DD718BB129E3280001393EB /* PrefsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefsController.m; sourceTree = "<group>"; };
 		7DD718BD129E328C001393EB /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Prefs.xib; sourceTree = "<group>"; };
@@ -212,6 +215,7 @@
 				7D029C6C12CD309500882BDA /* Wind Chimes.m4a */,
 				7DD719D012A2A393001393EB /* clock.icns */,
 				7DD7193C12A0E5D8001393EB /* ringtone_16.png */,
+				7DBCE51E12D9453700E8884C /* Localizable.strings */,
 				7DD7191A129E3B23001393EB /* Prefs.xib */,
 				7DED09E812996C7300686093 /* AlarmBackground.png */,
 				7D74D8201289D0170021111F /* ringtone.png */,
@@ -305,6 +309,7 @@
 				7D029C7512CD309500882BDA /* Telephone.m4a in Resources */,
 				7D029C7612CD309500882BDA /* Wind Chimes.m4a in Resources */,
 				7D029CAE12CD394300882BDA /* Beep.m4a in Resources */,
+				7DBCE52012D9453700E8884C /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +362,15 @@
 				7DBCE51812D9405C00E8884C /* French */,
 			);
 			name = AlarmOverlay.xib;
+			sourceTree = "<group>";
+		};
+		7DBCE51E12D9453700E8884C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DBCE51F12D9453700E8884C /* English */,
+				7DBCE52112D9453F00E8884C /* French */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		7DD7191A129E3B23001393EB /* Prefs.xib */ = {
