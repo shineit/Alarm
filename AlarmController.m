@@ -332,7 +332,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	
 	
-    [statusItem setImage:[NSImage imageNamed:@"ringtone_16"]];
+    [statusItem setImage:[NSImage imageNamed:@"clock-16"]];
 	
     [statusItem setHighlightMode:YES];
 	[statusItem setTarget:self];

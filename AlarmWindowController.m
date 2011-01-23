@@ -191,6 +191,10 @@
 	if (mediaPanelController) {
 		[mediaPanelController hideWindow:nil];
 	}
+	//unregister as delegate of the library controller
+	IMBLibraryController* libraryController = [IMBLibraryController sharedLibraryControllerWithMediaType:kIMBMediaTypeAudio];
+	libraryController.delegate = nil;
+	
 	return YES;
 }
 
@@ -224,22 +228,6 @@
 	IMBLibraryController* libraryController = [IMBLibraryController sharedLibraryControllerWithMediaType:kIMBMediaTypeAudio];
 	libraryController.delegate = self;
 	[mediaPanelController showWindow:nil];
-	//[NSApp runModalForWindow:[panelController window]];
-	
-	/*
-	NSOpenPanel *panel = [NSOpenPanel openPanel];
-	[panel setAllowsMultipleSelection:NO];
-	[panel setCanChooseDirectories:NO];
-	[panel setAllowedFileTypes:[NSArray arrayWithObjects:@"mp3",@"wav",@"m4a",@"aac",nil]];
-	int res = [panel runModal];
-	
-	if(res == NSOKButton){
-		NSURL *url = [panel URL];
-		NSString *path = [url path];
-		[self setCustomMediaPath:path];
-	}
-	 
-	 */
 }
 
 -(BOOL)libraryController:(IMBLibraryController *)controller didSelectObject:(IMBObject *)clickedObject inNode:(IMBNode *)node {

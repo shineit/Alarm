@@ -244,6 +244,7 @@
 		7D8809E112EB8D35000FD878 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D8809E012EB8D35000FD878 /* libsqlite3.dylib */; };
 		7D880A7D12EB9056000FD878 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D880A7C12EB9056000FD878 /* SystemConfiguration.framework */; };
 		7D880A8312EB9095000FD878 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D880A8212EB9095000FD878 /* libcrypto.dylib */; };
+		7D880B5912ECAF80000FD878 /* clock-16.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D880B5812ECAF80000FD878 /* clock-16.png */; };
 		7DBCE52012D9453700E8884C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7DBCE51E12D9453700E8884C /* Localizable.strings */; };
 		7DD718BC129E3280001393EB /* PrefsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD718BB129E3280001393EB /* PrefsController.m */; };
 		7DD7191B129E3B23001393EB /* Prefs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DD7191A129E3B23001393EB /* Prefs.xib */; };
@@ -641,6 +642,7 @@
 		7D8809E012EB8D35000FD878 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		7D880A7C12EB9056000FD878 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7D880A8212EB9095000FD878 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
+		7D880B5812ECAF80000FD878 /* clock-16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "clock-16.png"; path = "Resources/clock-16.png"; sourceTree = "<group>"; };
 		7DBCE50E12D93ED600E8884C /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		7DBCE51712D9404900E8884C /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/AlarmWindow.xib; sourceTree = "<group>"; };
 		7DBCE51812D9405C00E8884C /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/AlarmOverlay.xib; sourceTree = "<group>"; };
@@ -770,6 +772,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7D880B5812ECAF80000FD878 /* clock-16.png */,
 				7D029CAD12CD394300882BDA /* Beep.m4a */,
 				7D029C6312CD309500882BDA /* Cuckoo.m4a */,
 				7D029C6612CD309500882BDA /* La Cucaracha.mp3 */,
@@ -1354,6 +1357,7 @@
 				7D88098A12EB89E9000FD878 /* url_icon.tiff in Resources */,
 				7D88098B12EB89E9000FD878 /* version.plist in Resources */,
 				7D88098C12EB89E9000FD878 /* warning.tiff in Resources */,
+				7D880B5912ECAF80000FD878 /* clock-16.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
