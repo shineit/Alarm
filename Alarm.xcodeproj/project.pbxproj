@@ -643,8 +643,8 @@
 		7D880A7C12EB9056000FD878 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7D880A8212EB9095000FD878 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
 		7D880B5812ECAF80000FD878 /* clock-16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "clock-16.png"; path = "Resources/clock-16.png"; sourceTree = "<group>"; };
+		7D880B7312ECB15B000FD878 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/AlarmWindow.xib; sourceTree = "<group>"; };
 		7DBCE50E12D93ED600E8884C /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		7DBCE51712D9404900E8884C /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/AlarmWindow.xib; sourceTree = "<group>"; };
 		7DBCE51812D9405C00E8884C /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/AlarmOverlay.xib; sourceTree = "<group>"; };
 		7DBCE51F12D9453700E8884C /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7DBCE52112D9453F00E8884C /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1534,7 +1534,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7D1D8E57129A26F50000BB4D /* English */,
-				7DBCE51712D9404900E8884C /* French */,
+				7D880B7312ECB15B000FD878 /* French */,
 			);
 			name = AlarmWindow.xib;
 			sourceTree = "<group>";
