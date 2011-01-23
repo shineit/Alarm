@@ -190,6 +190,7 @@
 			7D880B4412ECA934000FD878 /* PBXTextBookmark */ = 7D880B4412ECA934000FD878 /* PBXTextBookmark */;
 			7D880B4512ECA934000FD878 /* PBXTextBookmark */ = 7D880B4512ECA934000FD878 /* PBXTextBookmark */;
 			7D880B4612ECA934000FD878 /* PBXTextBookmark */ = 7D880B4612ECA934000FD878 /* PBXTextBookmark */;
+			7D880B4B12ECAA8C000FD878 /* PBXTextBookmark */ = 7D880B4B12ECAA8C000FD878 /* PBXTextBookmark */;
 			7D99511112D3CD3D0007842F = 7D99511112D3CD3D0007842F /* PlistBookmark */;
 			7DBCE53E12D9461D00E8884C = 7DBCE53E12D9461D00E8884C /* PBXTextBookmark */;
 			7DBCE53F12D9461D00E8884C = 7DBCE53F12D9461D00E8884C /* PBXTextBookmark */;
@@ -851,7 +852,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {936, 24684}}";
 			sepNavSelRange = "{64576, 0}";
-			sepNavVisRange = "{64034, 1038}";
+			sepNavVisRange = "{64071, 1034}";
 		};
 	};
 	7D88082612EB89E8000FD878 /* IMBPanelController.h */ = {
@@ -1218,7 +1219,7 @@
 		ignoreCount = 0;
 		lineNumber = 2094;
 		location = iMedia;
-		modificationTime = 317499699.272674;
+		modificationTime = 317500043.064838;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -1738,6 +1739,16 @@
 		rType = 0;
 		vrLen = 1038;
 		vrLoc = 64034;
+	};
+	7D880B4B12ECAA8C000FD878 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7D88081A12EB89E8000FD878 /* IMBObjectViewController.m */;
+		name = "IMBObjectViewController.m: 1885";
+		rLen = 0;
+		rLoc = 64576;
+		rType = 0;
+		vrLen = 1034;
+		vrLoc = 64071;
 	};
 	7D99511112D3CD3D0007842F /* PlistBookmark */ = {
 		isa = PlistBookmark;
