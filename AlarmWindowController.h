@@ -14,6 +14,7 @@
 #define DELETE_ACTION 2
 
 @class AlarmController;
+@class IMBPanelController;
 
 @interface AlarmWindowController : NSWindowController {
 	Alarm *alarm;
@@ -32,6 +33,8 @@
 	IBOutlet NSButton *btnChooseFile;
 	
 	NSString *customMediaPath;
+	
+	IMBPanelController *mediaPanelController;
 }
 
 @property (retain, nonatomic) Alarm *alarm;

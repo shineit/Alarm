@@ -10,6 +10,7 @@
 #import "Action.h"
 #import "AlarmController.h"
 #import "SoundController.h"
+#import "iMedia.h"
 
 
 @implementation AlarmWindowController
@@ -80,10 +81,10 @@
 		else {
 			[matrixRingtone selectCellWithTag:1];
 			if ([ringtone hasPrefix:@"music://"]) {
-				[self setCustomMediaPath:[ringtone substringFromIndex:8]];
+				[self setCustomMediaPath:[ringtone substringFromIndex:8] withName:nil];
 			}
 			else {
-				[self setCustomMediaPath:ringtone];
+				[self setCustomMediaPath:ringtone withName:nil];
 			}
 
 		}
@@ -185,9 +186,12 @@
 	}
 }
 
--(BOOL)OffwindowShouldClose:(id)sender {
-	//TODO
-	return NO;
+-(BOOL)windowShouldClose:(id)sender {
+	//hide media panel if visible
+	if (mediaPanelController) {
+		[mediaPanelController hideWindow:nil];
+	}
+	return YES;
 }
 
 -(IBAction)cancel:(id)sender {
@@ -203,15 +207,26 @@
 	}
 }
 
--(void)setCustomMediaPath:(NSString *)mediaPath {
+-(void)setCustomMediaPath:(NSString *)mediaPath withName:(NSString *)name {
 
 	customMediaPath = [mediaPath copy];
 	//NSButtonCell *cell = [matrixRingtone cellWithTag:1]; //Custom media radio button
-	[lblPath setStringValue:[customMediaPath lastPathComponent]];
+	if (name) {
+		[lblPath setStringValue:name];
+	}
+	else [lblPath setStringValue:[customMediaPath lastPathComponent]];
 
 }
 
 -(IBAction)chooseMediaFile:(id)sender {
+	NSArray* mediaTypes = [NSArray arrayWithObjects:kIMBMediaTypeAudio,nil];
+	mediaPanelController = [IMBPanelController sharedPanelControllerWithDelegate:self mediaTypes:mediaTypes];
+	IMBLibraryController* libraryController = [IMBLibraryController sharedLibraryControllerWithMediaType:kIMBMediaTypeAudio];
+	libraryController.delegate = self;
+	[mediaPanelController showWindow:nil];
+	//[NSApp runModalForWindow:[panelController window]];
+	
+	/*
 	NSOpenPanel *panel = [NSOpenPanel openPanel];
 	[panel setAllowsMultipleSelection:NO];
 	[panel setCanChooseDirectories:NO];
@@ -223,6 +238,14 @@
 		NSString *path = [url path];
 		[self setCustomMediaPath:path];
 	}
+	 
+	 */
+}
+
+-(BOOL)libraryController:(IMBLibraryController *)controller didSelectObject:(IMBObject *)clickedObject inNode:(IMBNode *)node {
+	
+	[self setCustomMediaPath:clickedObject.location withName:clickedObject.name];
+	return YES;
 }
 
 -(IBAction)chboxRepeatChanged:(id)sender {
