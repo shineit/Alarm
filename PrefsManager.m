@@ -53,6 +53,20 @@ static PrefsManager *sharedInstance = nil;
 	return snoozeInterval;
 }
 
+-(BOOL)readAllowIdleSleep {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	
+	return [defaults boolForKey:@"AllowIdleSleep"];
+}
+
+-(BOOL)writeAllowIdleSleep:(BOOL)allowIdleSleep {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	
+	[defaults setBool:allowIdleSleep forKey:@"AllowIdleSleep"];
+	
+	return [defaults boolForKey:@"AllowIdleSleep"];
+}
+
 -(void)dealloc {
 	[super dealloc];
 }

@@ -246,6 +246,7 @@
 		7D880A8312EB9095000FD878 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D880A8212EB9095000FD878 /* libcrypto.dylib */; };
 		7D880B5912ECAF80000FD878 /* clock-16.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D880B5812ECAF80000FD878 /* clock-16.png */; };
 		7DBCE52012D9453700E8884C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7DBCE51E12D9453700E8884C /* Localizable.strings */; };
+		7DD5310F12FB47E600793767 /* clock-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DD5310E12FB47E600793767 /* clock-64.png */; };
 		7DD718BC129E3280001393EB /* PrefsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD718BB129E3280001393EB /* PrefsController.m */; };
 		7DD7191B129E3B23001393EB /* Prefs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DD7191A129E3B23001393EB /* Prefs.xib */; };
 		7DD7191E129E3B47001393EB /* AlarmWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DD7191D129E3B47001393EB /* AlarmWindow.xib */; };
@@ -265,14 +266,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 7D88084A12EB89E8000FD878 /* iMedia.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* iMedia.framework */;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
 			remoteInfo = iMedia;
 		};
 		7D88099612EB89E9000FD878 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7D88084A12EB89E8000FD878 /* iMedia.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D09933551011B26E00C527B7 /* iMedia2.app */;
+			remoteGlobalIDString = D09933551011B26E00C527B7;
 			remoteInfo = "iMedia2 Tester";
 		};
 /* End PBXContainerItemProxy section */
@@ -648,6 +649,7 @@
 		7DBCE51812D9405C00E8884C /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/AlarmOverlay.xib; sourceTree = "<group>"; };
 		7DBCE51F12D9453700E8884C /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7DBCE52112D9453F00E8884C /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7DD5310E12FB47E600793767 /* clock-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "clock-64.png"; path = "Resources/clock-64.png"; sourceTree = "<group>"; };
 		7DD718BA129E3280001393EB /* PrefsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefsController.h; sourceTree = "<group>"; };
 		7DD718BB129E3280001393EB /* PrefsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefsController.m; sourceTree = "<group>"; };
 		7DD718BD129E328C001393EB /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Prefs.xib; sourceTree = "<group>"; };
@@ -789,6 +791,7 @@
 				7DED09E812996C7300686093 /* AlarmBackground.png */,
 				7D74D8201289D0170021111F /* ringtone.png */,
 				7D74D81D1289CE5E0021111F /* delete.png */,
+				7DD5310E12FB47E600793767 /* clock-64.png */,
 				7D27D74E12871A3B00FBDCB1 /* edit.png */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
@@ -1358,6 +1361,7 @@
 				7D88098B12EB89E9000FD878 /* version.plist in Resources */,
 				7D88098C12EB89E9000FD878 /* warning.tiff in Resources */,
 				7D880B5912ECAF80000FD878 /* clock-16.png in Resources */,
+				7DD5310F12FB47E600793767 /* clock-64.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

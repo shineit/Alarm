@@ -17,6 +17,10 @@
 	int snoozeInterva = [[PrefsManager sharedInstance] readSnoozeInterval];
 	[snoozeIntervalSlider setIntValue:(snoozeInterva / 60)];	
 	[self snoozeIntervalSliderChanged:self];
+	
+	//prevent sleep
+	BOOL allowSleep = [[PrefsManager sharedInstance] readAllowIdleSleep];
+	[chboxPreventSleep setState:!allowSleep];
 
 }
 
@@ -27,6 +31,11 @@
 	//Display
 	[lblSnoozeInterval setStringValue:[NSString stringWithFormat:NSLocalizedString(@"%d mn",@"Snooze interval in Prefs"),snoozeInterval]];
 	
+}
+
+-(IBAction)chboxPreventSleepClicked:(id)sender {
+	//save opposite of checkbox since checkbox is Preventing Sleep
+	[[PrefsManager sharedInstance] writeAllowIdleSleep:(![chboxPreventSleep state])];
 }
 
 

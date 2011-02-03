@@ -16,6 +16,8 @@
 -(int)readMaxSnooze;
 -(int)readSnoozeInterval;
 -(int)writeSnoozeInterval:(int)snoozeInterval;
+-(BOOL)readAllowIdleSleep;
+-(BOOL)writeAllowIdleSleep:(BOOL)allowIdleSleep;
 
 + (PrefsManager *)sharedInstance;
 

@@ -15,6 +15,7 @@
 #import <IOKit/pwr_mgt/IOPMLib.h>
 #import "AlarmOverlayController.h"
 #import "PrefsController.h"
+#import "PrefsManager.h"
 
 #define INTERVAL 0.1 //in seconds
 
@@ -148,6 +149,9 @@
 	}
 	controller = [[AlarmWindowController alloc] initWithAlarm:nil Action:ADD_ACTION Controller:self] ;
 	[controller window];
+	//make app front app 
+	[NSApp activateIgnoringOtherApps:YES];
+	
 	[controller showWindow:self];
 	
 }
@@ -182,7 +186,9 @@
 		[controller release];
 	}
 	controller = [[AlarmWindowController alloc] initWithAlarm:[alarms objectAtIndex:index] Action:EDIT_ACTION Controller:self] ;
-	[controller window];
+	//make app front app 
+	[NSApp activateIgnoringOtherApps:YES];
+	//show window
 	[controller showWindow:self];
 }
 
@@ -225,6 +231,8 @@
 	}
 	prefsController = [PrefsWindowController alloc];
 	[prefsController initWithWindowNibName:@"Prefs"];
+	//make app front app 
+	[NSApp activateIgnoringOtherApps:YES];
 	[prefsController showWindow:window];
 }
 
@@ -448,16 +456,41 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	//add status item
 	[self activateStatusMenu];
 	
+	//prevent sleep
+	BOOL preventSleep = ![[PrefsManager sharedInstance] readAllowIdleSleep];
+	if (preventSleep) {
+		IOReturn success = IOPMAssertionCreate(kIOPMAssertionTypeNoIdleSleep, 
+											   kIOPMAssertionLevelOn, &sleepAssertionID); 
+		if (success == kIOReturnSuccess)
+		{
+			
+			NSLog(@"Sleep Prevented.");
+			
+		}
+		
+	}
+	
 }
 
 - (void)applicationWillBecomeActive:(NSNotification *)aNotification {
 	//show window if hidden
-	[window makeKeyAndOrderFront:self];
+	//[window makeKeyAndOrderFront:self];
 	
+}
+
+- (IBAction)showMainWindow:(id)sender {
+	//show window if hidden
+	[window makeKeyAndOrderFront:self];
 }
 
 - (void) applicationWillTerminate: (NSNotification *)note { 
 	[self saveDataToDisk]; 
+	
+	//release sleep 
+	if (sleepAssertionID) {
+		IOReturn success = IOPMAssertionRelease(sleepAssertionID);
+		//The system will be able to sleep again. 
+	}
 }
 
 -(BOOL)authorizeUser {

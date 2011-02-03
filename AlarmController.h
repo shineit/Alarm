@@ -10,6 +10,8 @@
 #import "Alarm.h"
 #include <Security/Authorization.h>
 #include <Security/AuthorizationTags.h>
+#import <IOKit/pwr_mgt/IOPMLib.h>
+
 
 @class AlarmWindowController;
 @class AlarmOverlayController;
@@ -31,6 +33,8 @@
 	NSStatusItem *statusItem;
 	
 	NSDate *lastClickDate;
+	
+	IOPMAssertionID sleepAssertionID;
 }
 
 
@@ -49,6 +53,7 @@
 -(IBAction)uiEditAlarm:(id)sender;
 -(IBAction)uiRemoveAlarm:(id)sender;
 -(IBAction)showPreferences:(id)sender;
+-(IBAction)showMainWindow:(id)sender;
 
 - (NSString *) pathForDataFile;
 - (void) saveDataToDisk;

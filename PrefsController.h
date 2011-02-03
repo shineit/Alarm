@@ -12,9 +12,11 @@
 @interface PrefsWindowController : NSWindowController {
 	IBOutlet NSSlider *snoozeIntervalSlider;
 	IBOutlet NSTextField *lblSnoozeInterval;
+	IBOutlet NSButton *chboxPreventSleep;
 	
 }
 
 -(IBAction)snoozeIntervalSliderChanged:(id)sender;
+-(IBAction)chboxPreventSleepClicked:(id)sender;
 
 @end
