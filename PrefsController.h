@@ -13,10 +13,13 @@
 	IBOutlet NSSlider *snoozeIntervalSlider;
 	IBOutlet NSTextField *lblSnoozeInterval;
 	IBOutlet NSButton *chboxPreventSleep;
+    
+    IBOutlet NSButton *chboxShowDockIcon;
 	
 }
 
 -(IBAction)snoozeIntervalSliderChanged:(id)sender;
 -(IBAction)chboxPreventSleepClicked:(id)sender;
+-(IBAction)chboxShowDockIconClicked:(id)sender;
 
 @end

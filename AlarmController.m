@@ -456,20 +456,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	//add status item
 	[self activateStatusMenu];
 	
-	//prevent sleep
-	BOOL preventSleep = ![[PrefsManager sharedInstance] readAllowIdleSleep];
-	if (preventSleep) {
-		IOReturn success = IOPMAssertionCreate(kIOPMAssertionTypeNoIdleSleep, 
-											   kIOPMAssertionLevelOn, &sleepAssertionID); 
-		if (success == kIOReturnSuccess)
-		{
-			
-			NSLog(@"Sleep Prevented.");
-			
-		}
-		
-	}
-	
 }
 
 - (IBAction)showMainWindow:(id)sender {
@@ -563,6 +549,45 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	//instead hide window
 	[window orderOut:self];
 	return NO;
+}
+
+-(void)updateDockIcon {
+    BOOL iconInDock = [[PrefsManager sharedInstance] readShowDockIcon];
+    if (iconInDock) {
+        ProcessSerialNumber psn = { 0, kCurrentProcess };
+        TransformProcessType(&psn, kProcessTransformToForegroundApplication);
+    }
+}
+
+-(void)sleepPrevention {
+    //prevent sleep
+	BOOL preventSleep = ![[PrefsManager sharedInstance] readAllowIdleSleep];
+	if (preventSleep) {
+		IOReturn success = IOPMAssertionCreate(kIOPMAssertionTypeNoIdleSleep, 
+											   kIOPMAssertionLevelOn, &sleepAssertionID); 
+		if (success == kIOReturnSuccess)
+		{
+			NSLog(@"Sleep Prevented.");
+		}
+	}
+    else {
+        //release sleep 
+        if (sleepAssertionID) {
+            IOReturn success = IOPMAssertionRelease(sleepAssertionID);
+            //The system will be able to sleep again.
+            if (success == kIOReturnSuccess)
+            {
+                NSLog(@"Sleep Released.");
+            }
+        }
+
+    }
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    [self updateDockIcon];
+    
+    [self sleepPrevention];
 }
 
 -(void)dealloc {

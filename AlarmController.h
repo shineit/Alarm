@@ -59,4 +59,7 @@
 - (void) saveDataToDisk;
 - (void) loadDataFromDisk; 
 
+-(void)sleepPrevention;
+-(void)updateDockIcon;
+
 @end

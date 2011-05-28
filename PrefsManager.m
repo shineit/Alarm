@@ -12,6 +12,16 @@ static PrefsManager *sharedInstance = nil;
 
 @implementation PrefsManager
 
++ (void)initialize{
+    
+    //register defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithBool:YES], @"ShowDockIcon", [NSNumber numberWithInt:60*5], @"AlarmSnoozeInterval", 
+                                                                            [NSNumber numberWithBool:NO], @"AllowIdleSleep", nil];
+    [defaults registerDefaults:appDefaults];
+}
+
 -(int)readMaxSnooze {
 	//read snooze prefs from pref file
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -66,6 +76,21 @@ static PrefsManager *sharedInstance = nil;
 	
 	return [defaults boolForKey:@"AllowIdleSleep"];
 }
+
+-(BOOL)readShowDockIcon {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	
+	return [defaults boolForKey:@"ShowDockIcon"];
+}
+
+-(BOOL)writeShowDockIcon:(BOOL)showDockIcon  {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	
+	[defaults setBool:showDockIcon forKey:@"ShowDockIcon"];
+	
+	return [defaults boolForKey:@"ShowDockIcon"];
+}
+
 
 -(void)dealloc {
 	[super dealloc];

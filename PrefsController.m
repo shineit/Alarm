@@ -7,7 +7,8 @@
 //
 
 #import "PrefsController.h"
-#import "PrefsManager.h";
+#import "PrefsManager.h"
+#import "AlarmController.h"
 
 
 @implementation PrefsWindowController
@@ -21,13 +22,18 @@
 	//prevent sleep
 	BOOL allowSleep = [[PrefsManager sharedInstance] readAllowIdleSleep];
 	[chboxPreventSleep setState:!allowSleep];
+    
+    //show dock icon
+	BOOL showDock = [[PrefsManager sharedInstance] readShowDockIcon];
+	[chboxShowDockIcon setState:showDock];
+
 
 }
 
 -(IBAction)snoozeIntervalSliderChanged:(id)sender {
 	int snoozeInterval = [snoozeIntervalSlider intValue];
 	//Save value
-	int wsnoozeInterval = [[PrefsManager sharedInstance] writeSnoozeInterval:(snoozeInterval*60)];
+	[[PrefsManager sharedInstance] writeSnoozeInterval:(snoozeInterval*60)];
 	//Display
 	[lblSnoozeInterval setStringValue:[NSString stringWithFormat:NSLocalizedString(@"%d mn",@"Snooze interval in Prefs"),snoozeInterval]];
 	
@@ -36,6 +42,18 @@
 -(IBAction)chboxPreventSleepClicked:(id)sender {
 	//save opposite of checkbox since checkbox is Preventing Sleep
 	[[PrefsManager sharedInstance] writeAllowIdleSleep:(![chboxPreventSleep state])];
+    
+    AlarmController *delegate = [NSApp delegate];
+    [delegate sleepPrevention];
+}
+
+-(IBAction)chboxShowDockIconClicked:(id)sender {
+    //save opposite of checkbox since checkbox is Preventing Sleep
+	[[PrefsManager sharedInstance] writeShowDockIcon:([chboxShowDockIcon state])];
+    
+    AlarmController *delegate = [NSApp delegate];
+    [delegate updateDockIcon];
+    
 }
 
 

@@ -18,6 +18,9 @@
 -(int)writeSnoozeInterval:(int)snoozeInterval;
 -(BOOL)readAllowIdleSleep;
 -(BOOL)writeAllowIdleSleep:(BOOL)allowIdleSleep;
+-(BOOL)readShowDockIcon;
+-(BOOL)writeShowDockIcon:(BOOL)showDockIcon;
+
 
 + (PrefsManager *)sharedInstance;
 
