@@ -20,6 +20,8 @@
 -(BOOL)writeAllowIdleSleep:(BOOL)allowIdleSleep;
 -(BOOL)readShowDockIcon;
 -(BOOL)writeShowDockIcon:(BOOL)showDockIcon;
+-(int)readVolume;
+-(void)writeVolume:(int)volume;
 
 
 + (PrefsManager *)sharedInstance;

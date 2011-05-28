@@ -15,10 +15,14 @@
 	IBOutlet NSButton *chboxPreventSleep;
     
     IBOutlet NSButton *chboxShowDockIcon;
+    
+    IBOutlet NSSlider *volumeSlider;
+	IBOutlet NSTextField *lblVolume;
 	
 }
 
 -(IBAction)snoozeIntervalSliderChanged:(id)sender;
+-(IBAction)volumeSliderChanged:(id)sender;
 -(IBAction)chboxPreventSleepClicked:(id)sender;
 -(IBAction)chboxShowDockIconClicked:(id)sender;
 

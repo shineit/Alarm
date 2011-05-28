@@ -18,7 +18,7 @@ static PrefsManager *sharedInstance = nil;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithBool:YES], @"ShowDockIcon", [NSNumber numberWithInt:60*5], @"AlarmSnoozeInterval", 
-                                                                            [NSNumber numberWithBool:NO], @"AllowIdleSleep", nil];
+                                                                            [NSNumber numberWithBool:NO], @"AllowIdleSleep",[NSNumber numberWithInt:75], @"Volume", nil];
     [defaults registerDefaults:appDefaults];
 }
 
@@ -61,6 +61,23 @@ static PrefsManager *sharedInstance = nil;
 	[defaults setInteger:snoozeInterval forKey:@"AlarmSnoozeInterval"];
 	
 	return snoozeInterval;
+}
+
+-(int)readVolume  {
+	//read snooze prefs from pref file
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	
+	int volume = [defaults integerForKey:@"Volume"];
+	
+	return volume;
+}
+
+-(void)writeVolume:(int)volume  {
+	//read snooze prefs from pref file
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	
+	[defaults setInteger:volume forKey:@"Volume"];
+	
 }
 
 -(BOOL)readAllowIdleSleep {

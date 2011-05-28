@@ -7,6 +7,7 @@
 //
 
 #import "SoundController.h"
+#import "PrefsManager.h"
 
 static SoundController *sharedInstance = nil;
 
@@ -56,6 +57,9 @@ static SoundController *sharedInstance = nil;
 	repeatCount = count;
 	//set delegate to be notified when playback ends
 	[sound setDelegate:self];
+    //set volume
+    int volume = [[PrefsManager sharedInstance] readVolume];
+    [sound setVolume:(volume/100.0)];
 	//play
 	[sound play];
 	
@@ -109,6 +113,9 @@ static SoundController *sharedInstance = nil;
 	}
 	//set delegate to be notified when playback ends
 	[sound setDelegate:self];
+    //set volume
+    int volume = [[PrefsManager sharedInstance] readVolume];
+    [sound setVolume:(volume/100.0)];
 	//play
 	[sound play];
 	

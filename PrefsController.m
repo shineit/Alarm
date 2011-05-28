@@ -18,6 +18,12 @@
 	int snoozeInterva = [[PrefsManager sharedInstance] readSnoozeInterval];
 	[snoozeIntervalSlider setIntValue:(snoozeInterva / 60)];	
 	[self snoozeIntervalSliderChanged:self];
+    
+    //load snooze interval value
+	int volume = [[PrefsManager sharedInstance] readVolume];
+	[volumeSlider setIntValue:(volume)];	
+	[self volumeSliderChanged:self];
+
 	
 	//prevent sleep
 	BOOL allowSleep = [[PrefsManager sharedInstance] readAllowIdleSleep];
@@ -36,6 +42,15 @@
 	[[PrefsManager sharedInstance] writeSnoozeInterval:(snoozeInterval*60)];
 	//Display
 	[lblSnoozeInterval setStringValue:[NSString stringWithFormat:NSLocalizedString(@"%d mn",@"Snooze interval in Prefs"),snoozeInterval]];
+	
+}
+
+-(IBAction)volumeSliderChanged:(id)sender {
+	int volume = [volumeSlider intValue];
+	//Save value
+	[[PrefsManager sharedInstance] writeVolume:volume];
+	//Display
+	[lblVolume setStringValue:[NSString stringWithFormat:@"%d%%",volume]];
 	
 }
 
