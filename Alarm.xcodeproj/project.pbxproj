@@ -655,6 +655,7 @@
 		7DD718BD129E328C001393EB /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Prefs.xib; sourceTree = "<group>"; };
 		7DD7193C12A0E5D8001393EB /* ringtone_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ringtone_16.png; path = Resources/ringtone_16.png; sourceTree = "<group>"; };
 		7DD719D012A2A393001393EB /* clock.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = clock.icns; sourceTree = "<group>"; };
+		7DE5E3F01391181F000104FA /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/Prefs.xib; sourceTree = "<group>"; };
 		7DED090512965ABB00686093 /* PrefsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefsManager.h; sourceTree = "<group>"; };
 		7DED090612965ABB00686093 /* PrefsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefsManager.m; sourceTree = "<group>"; };
 		7DED094A1297E48600686093 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
@@ -1196,6 +1197,7 @@
 				Japanese,
 				French,
 				German,
+				fr,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Alarm */;
 			projectDirPath = "";
@@ -1530,6 +1532,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7DD718BD129E328C001393EB /* English */,
+				7DE5E3F01391181F000104FA /* fr */,
 			);
 			name = Prefs.xib;
 			sourceTree = "<group>";
