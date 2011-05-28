@@ -472,12 +472,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 }
 
-- (void)applicationWillBecomeActive:(NSNotification *)aNotification {
-	//show window if hidden
-	//[window makeKeyAndOrderFront:self];
-	
-}
-
 - (IBAction)showMainWindow:(id)sender {
 	//show window if hidden
 	[window makeKeyAndOrderFront:self];
@@ -557,6 +551,12 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 														   selector: @selector(receiveSleepNote:) name: NSWorkspaceWillSleepNotification object: NULL];
     [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver: self 
 														   selector: @selector(receiveWakeNote:) name: NSWorkspaceDidWakeNotification object: NULL];
+}
+
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication hasVisibleWindows:(BOOL)flag {
+    //show window if hidden
+	[window makeKeyAndOrderFront:self];
+    return YES;
 }
 
 -(BOOL)windowShouldClose:(id)sender {
